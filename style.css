@@ -87,6 +87,23 @@ body {
     background: #f5f5f5;
 }
 
+.nav-icon {
+  width: 20px;             
+  height: 20px;
+  vertical-align: middle;  
+  /* transition: transform 0.2s ease, opacity 0.3s ease; */
+  opacity: 0.8;            
+}
+
+.nav-tab:hover .nav-icon {
+  opacity: 1;            
+}
+
+.nav-tab.active .nav-icon {
+  filter: brightness(0) invert(1); /* makes icon white when active (if dark bg) */
+}
+
+
 .picture {
     width: 140px;
     height: 140px;
@@ -246,7 +263,7 @@ section {
 .tech-stack-section {
     padding: 4rem 0;
     overflow: hidden;
-    background: #fafafa;
+    background: #050505;
 }
 
 .tech-icons {
@@ -572,7 +589,19 @@ footer {
     gap: 2rem;
 }
 
-.social-links a {
+.social-links a img {
+  width: 20px;      /* adjust this value to control size */
+  height: 20px;
+  vertical-align: middle; /* keeps the icons aligned nicely with text if any */
+  transition: transform 0.2s ease;
+}
+
+.social-links a img:hover {
+  transform: scale(1.1);  /* subtle zoom effect on hover */
+}
+
+
+/* .social-links a {
     color: #666;
     font-size: 1.5rem;
     text-decoration: none;
@@ -581,7 +610,7 @@ footer {
 
 .social-links a:hover {
     color: #000;
-}
+} */
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
