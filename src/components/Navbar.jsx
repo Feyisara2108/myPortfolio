@@ -1,17 +1,11 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { FaGithub, FaInstagram, FaSun, FaMoon, FaAdjust } from 'react-icons/fa';
+import { FaXTwitter } from 'react-icons/fa6';
 import { FiHome, FiFileText } from 'react-icons/fi';
 import { profileData } from '../data/projects';
 import { useTheme } from './ThemeProvider';
 import { Link } from 'react-router-dom';
-
-// Custom X (Twitter) Logo SVG
-const XLogo = ({ size = 20 }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
-    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 24.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-  </svg>
-);
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
@@ -36,7 +30,7 @@ export default function Navbar() {
         
         <div className="flex items-center gap-1">
           <a href={profileData.socials.twitter} target="_blank" rel="noreferrer" className="p-2.5 text-textMuted hover:text-textPrimary rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" aria-label="Twitter">
-            <XLogo size={18} />
+            <FaXTwitter size={18} />
           </a>
           <a href={profileData.socials.github} target="_blank" rel="noreferrer" className="p-2.5 text-textMuted hover:text-textPrimary rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" aria-label="Github">
             <FaGithub size={18} />
