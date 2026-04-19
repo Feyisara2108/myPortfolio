@@ -24,8 +24,8 @@ export default function AllProjects() {
             <Link to="/" className="inline-flex items-center text-sm font-medium text-textMuted hover:text-accent transition-colors mb-6">
               <span className="mr-2">←</span> Back to Portfolio
             </Link>
-            <h1 className="text-4xl md:text-5xl font-display font-bold">
-              All <span className="text-gradient">Projects</span>
+            <h1 className="text-3xl md:text-4xl font-display font-bold">
+              All <span>Projects</span>
             </h1>
             <p className="text-textMuted mt-4 max-w-2xl">
               An archive of all my projects, experiments, and works.
