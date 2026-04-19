@@ -12,8 +12,8 @@ export const profileData = {
     twitter: "https://x.com/Ayokomi21",
     github: "https://github.com/Feyisara2108",
     blog: "https://hashnode.com/@ayokomi",
-    instagram: "https://www.instagram.com/ayokomi2108/",
-    email: "contact@ayokomi2108@gmail.com"
+    instagram: "https://instagram.com/mutmahinat_",
+    email: "ayokomi2108@gmail.com"
   },
   skills: [
     "JavaScript",
