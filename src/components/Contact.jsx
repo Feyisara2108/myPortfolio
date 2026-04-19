@@ -1,31 +1,44 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
 import { profileData } from '../data/projects';
 
 export default function Contact() {
-  const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
 
-  const sendEmail = (e) => {
+  const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
     
-    emailjs.init({ publicKey: "r8EQr7sPuPdQhaSyW" });
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData.entries());
 
-    emailjs.sendForm('default_service', 'template_default', formRef.current)
-      .then(() => {
-        setStatus('Message sent successfully!');
-        setLoading(false);
-        formRef.current.reset();
-        setTimeout(() => setStatus(''), 5000);
-      })
-      .catch((error) => {
-        console.error(error);
-        setStatus('Failed to send message. Please email me directly.');
-        setLoading(false);
+    try {
+      const response = await fetch(`https://formsubmit.co/ajax/${profileData.socials.email}`, {
+        method: "POST",
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          ...data,
+          _subject: "New message from portfolio!"
+        })
       });
+
+      if (response.ok) {
+        setStatus('success');
+        e.target.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch (error) {
+      console.error(error);
+      setStatus('error');
+    } finally {
+      setLoading(false);
+      setTimeout(() => setStatus(''), 5000);
+    }
   };
 
   return (
@@ -54,8 +67,11 @@ export default function Contact() {
             </div>
           </div>
           
-          <div className="bg-bg/50 rounded-[1.5rem] p-6 md:p-8 border border-black/5 dark:border-white/5 shadow-inner">
-            <form ref={formRef} onSubmit={sendEmail} className="space-y-5">
+          <div className="bg-bg/50 rounded-[1.5rem] border border-black/5 dark:border-white/5 shadow-inner relative overflow-hidden">
+            {/* Abstract Squiggles Background */}
+            <div className="absolute inset-0 z-0 opacity-10 pointer-events-none" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.83-5.59 5.591L54.627 12l-1.66 1.66-4.761-4.762L41.615 15.49l-1.66-1.66 6.59-6.592-4.761-4.761L43.444 0h11.183zM22.28 0l1.66 1.66-6.591 6.59-4.76 4.762L10.927 12l-1.66-1.66 5.59-5.591L14.027 0h8.252zm37.72 23.368l-1.66-1.66-4.761 4.762-6.59-6.592-1.66 1.66 6.59 6.59-4.76 4.761 1.66 1.66 4.76-4.76 6.591 6.59 1.66-1.66-5.59-5.592 5.59-5.591zM0 36.632l1.66 1.66 4.761-4.762 6.59 6.592 1.66-1.66-6.59-6.59 4.76-4.761-1.66-1.66-4.76 4.76-6.591-6.59L0 23.368l5.59 5.592L0 34.55v2.082zm48.207 23.368l1.66-1.66-5.59-5.592 5.59-5.59-1.66-1.66-4.762 4.76-6.591-6.59-1.66 1.66 6.59 6.59-4.76 4.762 1.66 1.66 4.762-4.761 5.59 5.59zM11.793 60l-1.66-1.66 5.59-5.592-5.59-5.59 1.66-1.66 4.762 4.76 6.591-6.59 1.66 1.66-6.59 6.59 4.76 4.762-1.66 1.66-4.762-4.761-5.59 5.59H11.793zM25.405 34.594l1.66 1.66-5.59 5.591-5.59-5.59 1.66-1.66 4.761 4.76 6.59-6.59-1.66-1.66-6.59 6.59-4.761-4.76 1.66-1.66 4.761 4.76 5.59-5.591 5.59 5.59-1.66 1.66-4.76-4.761-6.591 6.59 1.66 1.66 6.591-6.59z\' fill=\'%23ffffff\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")' }}></div>
+            
+            <form onSubmit={sendEmail} className="relative z-10 space-y-5 p-6 md:p-8">
               <div className="space-y-5">
                 <input 
                   type="text" 
@@ -63,14 +79,14 @@ export default function Contact() {
                   placeholder="Full Name" 
                   required 
                   minLength="2"
-                  className="w-full bg-card border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-textPrimary placeholder:text-textMuted focus:outline-none focus:border-textPrimary focus:ring-1 focus:ring-textPrimary transition-all font-sans"
+                  className="w-full bg-card/90 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-textPrimary placeholder:text-textMuted focus:outline-none focus:border-textPrimary focus:ring-1 focus:ring-textPrimary transition-all font-sans"
                 />
                 <input 
                   type="email" 
                   name="email" 
                   placeholder="Email Address" 
                   required
-                  className="w-full bg-card border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-textPrimary placeholder:text-textMuted focus:outline-none focus:border-textPrimary focus:ring-1 focus:ring-textPrimary transition-all font-sans"
+                  className="w-full bg-card/90 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-textPrimary placeholder:text-textMuted focus:outline-none focus:border-textPrimary focus:ring-1 focus:ring-textPrimary transition-all font-sans"
                 />
               </div>
               <textarea 
@@ -79,20 +95,25 @@ export default function Contact() {
                 required 
                 minLength="10"
                 rows="4"
-                className="w-full bg-card border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-textPrimary placeholder:text-textMuted focus:outline-none focus:border-textPrimary focus:ring-1 focus:ring-textPrimary transition-all resize-none font-sans"
+                className="w-full bg-card/90 backdrop-blur-sm border border-black/10 dark:border-white/10 rounded-xl px-5 py-4 text-textPrimary placeholder:text-textMuted focus:outline-none focus:border-textPrimary focus:ring-1 focus:ring-textPrimary transition-all resize-none font-sans"
               ></textarea>
               
               <button 
-                type="submit" 
+                type="submit"
                 disabled={loading}
-                className="w-full bg-textPrimary hover:opacity-90 text-bg font-semibold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl disabled:opacity-70 disabled:cursor-not-allowed text-lg"
+                className="w-full bg-textPrimary hover:opacity-90 text-bg font-semibold py-4 rounded-xl transition-all shadow-lg hover:shadow-xl text-lg disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {loading ? 'Sending...' : 'Send Message'}
               </button>
               
-              {status && (
-                <p className={`text-sm text-center mt-4 font-medium ${status.includes('successfully') ? 'text-green-500' : 'text-red-500'}`}>
-                  {status}
+              {status === 'success' && (
+                <p className="text-sm text-center mt-4 font-medium text-green-500">
+                  Message sent successfully!
+                </p>
+              )}
+              {status === 'error' && (
+                <p className="text-sm text-center mt-4 font-medium text-red-500">
+                  Failed to send. Please email directly.
                 </p>
               )}
             </form>
