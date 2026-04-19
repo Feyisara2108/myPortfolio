@@ -28,6 +28,7 @@ export default function HowCanIHelp() {
             <Marquee 
               items={profileData.skills} 
               className="!border-transparent bg-transparent"
+              customAnimationDuration="80s"
               renderItem={(skill) => (
                 <div className="bg-white text-black px-6 py-2.5 rounded-full text-base font-semibold tracking-wider hover:scale-105 transition-transform mx-2 shadow-xl font-display cursor-default flex items-center justify-center whitespace-nowrap">
                   {skill}
