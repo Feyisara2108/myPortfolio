@@ -4,19 +4,19 @@ import { experienceData } from '../data/projects';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 md:px-12 max-w-4xl mx-auto mb-12">
+    <section id="experience" className="py-10 px-6 md:px-12 max-w-4xl mx-auto w-full">
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6 }}
-        className="space-y-12 overflow-x-hidden"
+        className="space-y-8 overflow-x-hidden"
       >
-        <h2 className="text-4xl md:text-5xl font-display font-bold text-center md:text-left text-textPrimary">
+        <h2 className="text-3xl md:text-4xl font-display font-bold text-center md:text-left text-textPrimary">
           Work Experience
         </h2>
         
-        <div className="flex flex-col space-y-4">
+        <div className="space-y-4">
           {experienceData.map((item, index) => (
             <motion.div 
               key={index}
@@ -24,10 +24,10 @@ export default function Experience() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col md:flex-row md:items-center justify-between py-6 px-4 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-all group"
+              className="flex flex-col md:flex-row md:items-center justify-between py-4 px-4 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-all group"
             >
               {/* Date */}
-              <div className="text-textMuted text-[15px] font-medium mb-3 md:mb-0 w-48">
+              <div className="text-textMuted text-[14px] font-medium mb-1 md:mb-0 w-32">
                 {item.dates}
               </div>
               
