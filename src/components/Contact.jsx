@@ -29,26 +29,26 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 md:px-12 max-w-5xl mx-auto mb-12">
+    <section id="contact" className="py-10 px-6 md:px-12 max-w-5xl mx-auto mb-8">
       <motion.div
         initial={{ opacity: 0, scale: 0.95 }}
         whileInView={{ opacity: 1, scale: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="bg-card w-full rounded-[2rem] p-8 md:p-14 border border-black/5 dark:border-white/5 relative overflow-hidden shadow-2xl"
+        className="bg-card w-full rounded-[2rem] p-8 md:p-10 border border-black/5 dark:border-white/5 relative overflow-hidden shadow-2xl"
       >
         <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
         
-        <div className="grid md:grid-cols-2 gap-16 text-center md:text-left relative z-10 items-center">
+        <div className="grid md:grid-cols-2 gap-12 text-center md:text-left relative z-10 items-center">
           <div className="space-y-6">
-            <h2 className="text-4xl md:text-6xl font-display font-bold text-textPrimary leading-tight">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-textPrimary leading-tight">
               Let's build something <br className="hidden md:block"/> amazing.
             </h2>
-            <p className="text-textMuted text-lg max-w-sm mx-auto md:mx-0">
+            <p className="text-textMuted text-base md:text-lg max-w-sm mx-auto md:mx-0">
               I'm always interested in exploring new opportunities, collaborating, or exchanging ideas.
             </p>
-            <div className="pt-4">
-              <a href={`mailto:${profileData.socials.email}`} className="text-lg font-medium hover:opacity-80 transition-opacity underline underline-offset-4 text-textPrimary">
+            <div className="pt-2">
+              <a href={`mailto:${profileData.socials.email}`} className="text-base md:text-lg font-medium hover:opacity-80 transition-opacity underline underline-offset-4 text-textPrimary">
                 {profileData.socials.email}
               </a>
             </div>
