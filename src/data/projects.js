@@ -1,12 +1,12 @@
 export const profileData = {
   name: "Mutmahinat Arowolo",
   nickname: "Ayokomi",
-  role: "Software Engineer",
-  tagline: "Creating innovative solutions and captivating designs. University student by day, visionary creator by night.",
+  role: "Frontend & Blockchain Developer",
+  tagline: "Building robust, scalable applications and decentralized solutions. Passionate about empowering the future of the web.",
   bio: [
-    "I'm Mutmahinat Arowolo, a frontend and blockchain developer with a passion for web development, decentralized applications, and creative designs.",
-    "I enjoy turning ideas into intuitive digital products, paying attention to the little details that make a big difference. Beyond code, I’m passionate about empowering others, sharing what I learn, collaborating, and helping people grow through tech.",
-    "For me, development isn’t just about building software, it’s about building opportunities."
+    "I like to craft solid and scalable products with exceptional user experiences, focusing on innovation and problem-solving across various industries.",
+    "I'm Mutmahinat Arowolo, a developer with extensive experience in scalable frontends and secure smart contracts. I specialize in building high-fidelity web/dApp applications and decentralized protocols.",
+    "A passionate web3 advocate, I am deeply involved in modern frontend frameworks and Ethereum ecosystems. My core tech stack includes React, Next.js, and Solidity."
   ],
   socials: {
     twitter: "https://x.com/Ayokomi21",
@@ -21,9 +21,6 @@ export const profileData = {
     "Next.js",
     "Tailwind CSS",
     "Solidity",
-    "Hardhat",
-    "Foundry",
-    "Wagmi",
     "HTML",
     "CSS"
   ],
