@@ -42,7 +42,7 @@ export default function Navbar() {
         
         <div className="w-[1px] h-5 bg-black/10 dark:bg-white/10 mx-1"></div>
         
-        <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="ml-1 px-4 py-1.5 bg-textPrimary text-bg rounded-full font-medium text-xs hover:scale-105 transition-transform">
+        <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="ml-1 px-4 py-1.5 bg-textPrimary text-bg rounded-full font-medium text-xs whitespace-nowrap hover:scale-105 transition-transform">
           My Blog
         </a>
 
