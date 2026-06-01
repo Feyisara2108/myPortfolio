@@ -6,17 +6,27 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState('');
 
+  // Fallback for when the form service is unreachable (e.g. a formsubmit.co outage):
+  // open the visitor's own mail client with their message pre-filled, addressed to me.
+  const openMailFallback = ({ name = '', email = '', message = '' }) => {
+    const subject = encodeURIComponent('New message from portfolio!');
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\n${message}`
+    );
+    window.location.href = `mailto:${profileData.socials.email}?subject=${subject}&body=${body}`;
+  };
+
   const sendEmail = async (e) => {
     e.preventDefault();
     setLoading(true);
-    
+
     const formData = new FormData(e.target);
     const data = Object.fromEntries(formData.entries());
 
     try {
       const response = await fetch(`https://formsubmit.co/ajax/${profileData.socials.email}`, {
         method: "POST",
-        headers: { 
+        headers: {
           'Content-Type': 'application/json',
           'Accept': 'application/json'
         },
@@ -30,14 +40,18 @@ export default function Contact() {
         setStatus('success');
         e.target.reset();
       } else {
-        setStatus('error');
+        // Service responded but rejected (e.g. 521 outage) — fall back to mailto.
+        setStatus('fallback');
+        openMailFallback(data);
       }
     } catch (error) {
+      // Network/fetch failure — fall back to mailto so the message never hits a dead end.
       console.error(error);
-      setStatus('error');
+      setStatus('fallback');
+      openMailFallback(data);
     } finally {
       setLoading(false);
-      setTimeout(() => setStatus(''), 5000);
+      setTimeout(() => setStatus(''), 6000);
     }
   };
 
@@ -73,6 +87,15 @@ export default function Contact() {
             <div className="absolute inset-0 z-0 opacity-10 pointer-events-none hidden [.theme-light_&]:block" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'60\' height=\'60\' viewBox=\'0 0 60 60\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M54.627 0l.83.83-5.59 5.591L54.627 12l-1.66 1.66-4.761-4.762L41.615 15.49l-1.66-1.66 6.59-6.592-4.761-4.761L43.444 0h11.183zM22.28 0l1.66 1.66-6.591 6.59-4.76 4.762L10.927 12l-1.66-1.66 5.59-5.591L14.027 0h8.252zm37.72 23.368l-1.66-1.66-4.761 4.762-6.59-6.592-1.66 1.66 6.59 6.59-4.76 4.761 1.66 1.66 4.76-4.76 6.591 6.59 1.66-1.66-5.59-5.592 5.59-5.591zM0 36.632l1.66 1.66 4.761-4.762 6.59 6.592 1.66-1.66-6.59-6.59 4.76-4.761-1.66-1.66-4.76 4.76-6.591-6.59L0 23.368l5.59 5.592L0 34.55v2.082zm48.207 23.368l1.66-1.66-5.59-5.592 5.59-5.59-1.66-1.66-4.762 4.76-6.591-6.59-1.66 1.66 6.59 6.59-4.76 4.762 1.66 1.66 4.762-4.761 5.59 5.59zM11.793 60l-1.66-1.66 5.59-5.592-5.59-5.59 1.66-1.66 4.762 4.76 6.591-6.59 1.66 1.66-6.59 6.59 4.76 4.762-1.66 1.66-4.762-4.761-5.59 5.59H11.793zM25.405 34.594l1.66 1.66-5.59 5.591-5.59-5.59 1.66-1.66 4.761 4.76 6.59-6.59-1.66-1.66-6.59 6.59-4.761-4.76 1.66-1.66 4.761 4.76 5.59-5.591 5.59 5.59-1.66 1.66-4.76-4.761-6.591 6.59 1.66 1.66 6.591-6.59z\' fill=\'%23000000\' fill-rule=\'evenodd\'/%3E%3C/svg%3E")' }}></div>
             
             <form onSubmit={sendEmail} className="relative z-10 space-y-5 p-6 md:p-8">
+              {/* Honeypot: hidden from humans; bots that fill it get silently dropped by formsubmit */}
+              <input
+                type="text"
+                name="_honey"
+                tabIndex="-1"
+                autoComplete="off"
+                aria-hidden="true"
+                className="hidden"
+              />
               <div className="space-y-5">
                 <input 
                   type="text" 
@@ -110,6 +133,14 @@ export default function Contact() {
               {status === 'success' && (
                 <p className="text-sm text-center mt-4 font-medium text-green-500">
                   Message sent successfully!
+                </p>
+              )}
+              {status === 'fallback' && (
+                <p className="text-sm text-center mt-4 font-medium text-textMuted">
+                  Opening your email app… if nothing happens, email me at{' '}
+                  <a href={`mailto:${profileData.socials.email}`} className="underline text-textPrimary">
+                    {profileData.socials.email}
+                  </a>
                 </p>
               )}
               {status === 'error' && (
