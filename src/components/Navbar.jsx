@@ -1,8 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaInstagram, FaSun, FaMoon, FaAdjust } from 'react-icons/fa';
+import { FaGithub, FaSun, FaMoon, FaAdjust } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
-import { FiHome, FiFileText } from 'react-icons/fi';
+import { FiHome } from 'react-icons/fi';
 import { profileData } from '../data/projects';
 import { useTheme } from './ThemeProvider';
 import { Link } from 'react-router-dom';
@@ -34,9 +34,6 @@ export default function Navbar() {
           </a>
           <a href={profileData.socials.github} target="_blank" rel="noreferrer" className="p-2.5 text-textMuted hover:text-textPrimary rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" aria-label="Github">
             <FaGithub size={18} />
-          </a>
-          <a href="/#resume" className="p-2.5 text-textMuted hover:text-textPrimary rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" aria-label="Resume">
-            <FiFileText size={18} />
           </a>
         </div>
         
