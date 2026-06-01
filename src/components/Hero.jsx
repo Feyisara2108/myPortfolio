@@ -4,10 +4,9 @@ import { profileData, projectsData } from '../data/projects';
 import Marquee from './Marquee';
 
 export default function Hero() {
-  const projectItems = projectsData.length > 0 ? projectsData : [
-    { title: "Placeholder", image: "https://via.placeholder.com/600x400" },
-    { title: "Placeholder2", image: "https://via.placeholder.com/600x400" }
-  ];
+  // Only feature projects that have a real screenshot in the scrolling marquee.
+  const withImages = projectsData.filter((p) => p.image);
+  const projectItems = withImages.length > 0 ? withImages : projectsData;
 
   return (
     <section id="home" className="pt-32 md:pt-40 pb-10 px-6 md:px-12 max-w-6xl mx-auto flex flex-col items-center">

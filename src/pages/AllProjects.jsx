@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { motion } from 'framer-motion';
+import { FaGithub } from 'react-icons/fa';
 import { projectsData } from '../data/projects';
 
 export default function AllProjects() {
@@ -42,13 +43,20 @@ export default function AllProjects() {
                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                 className="bg-card backdrop-blur-sm border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-3xl overflow-hidden group flex flex-col transition-all"
               >
-                <div className="h-48 overflow-hidden relative border-b border-black/5 dark:border-white/5">
-                  <img 
-                    src={project.image} 
-                    alt={project.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    onError={(e) => { e.target.src = 'https://via.placeholder.com/400x300?text=Project+Mockup'; }}
-                  />
+                <div className="h-48 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-[#140b16]">
+                  {project.image ? (
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-accent/40 via-card to-blue-500/20 p-6 transition-transform duration-500 group-hover:scale-105">
+                      <span className="text-xl font-display font-bold text-white/90 text-center leading-tight drop-shadow-md">
+                        {project.title}
+                      </span>
+                    </div>
+                  )}
                   {/* Decorative dots in corners of the image */}
                   <div className="absolute top-3 left-3 w-1.5 h-1.5 rounded-full bg-white/30 backdrop-blur-md"></div>
                   <div className="absolute top-3 right-3 w-1.5 h-1.5 rounded-full bg-white/30 backdrop-blur-md"></div>
@@ -60,14 +68,31 @@ export default function AllProjects() {
                   <h3 className="text-xl font-display font-semibold text-textPrimary">
                     {project.title}
                   </h3>
-                  <p className="text-sm text-textMuted line-clamp-3 mb-4">
+                  <p className="text-sm text-textMuted line-clamp-3 mb-2">
                     {project.description}
                   </p>
-                  
-                  <div className="pt-2 mt-auto">
-                    <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center px-5 py-2 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-textPrimary rounded-full text-xs font-medium transition-colors">
-                      View Project <span className="ml-2 font-bold">&gt;</span>
-                    </a>
+
+                  {project.tags && (
+                    <div className="flex flex-wrap gap-2 mb-2">
+                      {project.tags.map((tag) => (
+                        <span key={tag} className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/5 dark:bg-white/10 text-textMuted font-semibold">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+
+                  <div className="pt-2 mt-auto flex flex-wrap gap-2">
+                    {project.liveLink && (
+                      <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center px-5 py-2 bg-textPrimary text-bg hover:opacity-90 rounded-full text-xs font-medium transition-opacity">
+                        Live Demo <span className="ml-2 font-bold">&gt;</span>
+                      </a>
+                    )}
+                    {project.github && (
+                      <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2 px-5 py-2 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-textPrimary rounded-full text-xs font-medium transition-colors">
+                        <FaGithub size={14} /> Code
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>
