@@ -12,21 +12,21 @@
 }
 
 @layer base {
-  /* Minimal Luxury palette — monochromatic, #141413 / #AFACA1 / #BDBBB2 / #C9C8BF */
+  /* Charcoal + Amber — quiet monochrome base, one warm accent. No gradients. */
   :root {
-    --theme-bg: #141413;
-    --theme-card: #1e1d1b;
-    --theme-text-primary: #c9c8bf;
-    --theme-text-muted: #afaca1;
-    --theme-accent: #bdbbb2;
+    --theme-bg: #0e0e10;
+    --theme-card: #17171a;
+    --theme-text-primary: #ededed;
+    --theme-text-muted: #9a9a9a;
+    --theme-accent: #f5a524;
   }
 
   .theme-light {
-    --color-bg: #c9c8bf;
-    --color-card: #d6d5cd;
-    --color-accent: #141413;
-    --color-textPrimary: #141413;
-    --color-textMuted: #57564f;
+    --color-bg: #f7f7f5;
+    --color-card: #ffffff;
+    --color-accent: #e0920f;
+    --color-textPrimary: #1a1a1a;
+    --color-textMuted: #5c5c5c;
   }
 
   body {
@@ -41,6 +41,19 @@
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-display);
     color: var(--color-textPrimary);
+  }
+}
+
+@media print {
+  @page {
+    margin: 1.5cm;
+  }
+  html, body {
+    background: #ffffff !important;
+  }
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
   }
 }
 

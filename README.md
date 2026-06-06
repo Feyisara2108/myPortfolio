@@ -1,16 +1,64 @@
-# React + Vite
+# Mutmahinat Arowolo — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio of **Mutmahinat Arowolo** (Ayokomi), a Frontend & Blockchain developer.
+Showcases web3 / smart-contract work and frontend projects, with per-project case-study
+pages and a downloadable résumé.
 
-Currently, two official plugins are available:
+🔗 **Live:** https://my-portfolio-eight-iota-82.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech stack
 
-## React Compiler
+- **React 19** + **Vite** (SPA, `react-router-dom`)
+- **Tailwind CSS v4** with a custom theme (Charcoal + Amber; dark/light toggle)
+- **Framer Motion** for animation
+- **react-icons**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the ESLint configuration
+- Dark / light theme toggle (persisted to `localStorage`)
+- Project **case-study pages** at `/projects/:slug` — overview, problem, contribution,
+  architecture, features, and challenges, so contract-only projects with no live UI still
+  tell a full story
+- **Résumé** at `/resume` — print-optimized page plus a one-click PDF download
+  (`/public/Mutmahinat-Arowolo-Resume.pdf`)
+- Contact form via [formsubmit.co](https://formsubmit.co) with a spam honeypot and a
+  `mailto:` fallback
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Project structure
+
+```
+src/
+├── App.jsx                # Routes: / · /projects · /projects/:slug · /resume
+├── data/projects.js       # Single source of truth: profile, projects, résumé, experience
+├── components/            # Navbar, Hero, About, Projects, ProjectCover, Contact, …
+└── pages/                 # Home, AllProjects, ProjectDetail, Resume
+```
+
+All site content lives in `src/data/projects.js`.
+
+## Development
+
+```bash
+npm install
+npm run dev      # start the dev server
+npm run build    # production build to dist/
+npm run preview  # preview the production build
+npm run lint     # eslint
+```
+
+## Résumé PDF
+
+The downloadable PDF is generated from `resume/resume.html`:
+
+```bash
+soffice --headless --convert-to pdf --outdir public resume/resume.html
+mv public/resume.pdf public/Mutmahinat-Arowolo-Resume.pdf
+```
+
+The `/resume` page also offers browser **Print → Save as PDF** for a copy that matches the
+site styling.
+
+## Deployment
+
+Deployed on Vercel. `vercel.json` rewrites non-asset routes to `index.html` so SPA deep
+links (e.g. `/resume`, `/projects/stellargive`) resolve on direct visit and refresh.

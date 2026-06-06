@@ -1,12 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { profileData, projectsData } from '../data/projects';
 import Marquee from './Marquee';
+import ProjectCover from './ProjectCover';
 
 export default function Hero() {
-  // Only feature projects that have a real screenshot in the scrolling marquee.
-  const withImages = projectsData.filter((p) => p.image);
-  const projectItems = withImages.length > 0 ? withImages : projectsData;
+  // Feature every project in the strip; ProjectCover renders a branded cover
+  // for the ones without a screenshot so the marquee stays full and balanced.
+  const projectItems = projectsData;
 
   return (
     <section id="home" className="pt-32 md:pt-40 pb-10 px-6 md:px-12 max-w-6xl mx-auto flex flex-col items-center">
@@ -38,7 +40,7 @@ export default function Hero() {
           </div>
           
           <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
-            <a href="#contact" className="px-8 py-3.5 rounded-full bg-textPrimary text-bg font-medium hover:opacity-90 transition-opacity">
+            <a href="#contact" className="px-8 py-3.5 rounded-full bg-accent text-[#141413] font-semibold hover:opacity-90 transition-opacity">
               Hire Me
             </a>
             <a href="#contact" className="px-6 py-3.5 rounded-full border border-black/10 dark:border-white/10 text-textPrimary font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center gap-2">
@@ -50,20 +52,23 @@ export default function Hero() {
       </div>
       
       {/* Continuing Projects Marquee */}
-      <div className="w-full mt-16 mb-4">
-        <Marquee 
-          items={projectItems} 
+      <div className="w-full mt-16 mb-4 [mask-image:linear-gradient(to_right,transparent,black_5%,black_95%,transparent)]">
+        <Marquee
+          items={projectItems}
           className="!border-transparent bg-transparent overflow-visible py-4"
+          customAnimationDuration="55s"
           renderItem={(project) => (
-            <div className="w-[200px] md:w-[240px] relative group rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-300 transform scale-100 hover:scale-105 hover:-translate-y-2 cursor-pointer border border-black/5 dark:border-white/5">
-              <div className="aspect-[4/3] overflow-hidden rounded-2xl relative bg-card">
-                <img 
-                  src={project.image || "https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=400&auto=format&fit=crop"} 
-                  alt={project.title} 
-                  className="w-full h-full object-cover transform"
-                />
+            <Link
+              to={`/projects/${project.slug}`}
+              className="block w-[300px] md:w-[360px] relative group rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-black/5 dark:border-white/5"
+            >
+              <div className="aspect-[16/10] overflow-hidden relative bg-card">
+                <ProjectCover project={project} className="transition-transform duration-500 group-hover:scale-105" />
               </div>
-            </div>
+              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity">
+                <span className="text-sm font-semibold text-white">{project.title}</span>
+              </div>
+            </Link>
           )}
         />
       </div>

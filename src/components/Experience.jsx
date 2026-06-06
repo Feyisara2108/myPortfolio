@@ -37,8 +37,8 @@ export default function Experience() {
                   {item.role}
                 </span>
                 <span className="hidden md:inline text-textMuted">at</span>
-                <div className="flex items-center gap-2 border border-black/10 dark:border-white/10 px-4 py-1.5 rounded-full bg-white/5 text-sm md:text-base text-[#4d7ef2] font-medium w-fit">
-                  <span className="w-1.5 h-1.5 rounded-full bg-[#4d7ef2]"></span>
+                <div className="flex items-center gap-2 border border-black/10 dark:border-white/10 px-4 py-1.5 rounded-full bg-black/5 dark:bg-white/5 text-sm md:text-base text-accent font-medium w-fit">
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
                   {item.company}
                 </div>
               </div>

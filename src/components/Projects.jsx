@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { FaGithub } from 'react-icons/fa';
 import { projectsData } from '../data/projects';
 import { Link } from 'react-router-dom';
+import ProjectCover from './ProjectCover';
 
 export default function Projects() {
   return (
@@ -20,39 +21,31 @@ export default function Projects() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {projectsData.slice(0, 4).map((project, index) => (
-              <motion.div 
+              <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-2xl overflow-hidden group flex flex-col transition-all cursor-pointer"
+                className="bg-card border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-2xl overflow-hidden group flex flex-col transition-all"
               >
-                <div className="h-48 sm:h-56 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-bg">
-                  {project.image ? (
-                    <img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-bg p-6 transition-transform duration-500 group-hover:scale-105">
-                      <span className="text-xl md:text-2xl font-display font-bold text-textPrimary text-center leading-tight">
-                        {project.title}
+                <Link to={`/projects/${project.slug}`} className="block">
+                  <div className="h-52 sm:h-60 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-bg">
+                    <ProjectCover project={project} className="opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    {project.status && (
+                      <span className="absolute top-4 left-4 text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/90 font-semibold">
+                        {project.status}
                       </span>
-                    </div>
-                  )}
-                  {/* Decorative dots in corners of the image */}
-                  <div className="absolute top-4 left-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
-                  <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
-                  <div className="absolute bottom-4 left-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
-                  <div className="absolute bottom-4 right-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
-                </div>
-                
+                    )}
+                  </div>
+                </Link>
+
                 <div className="p-6 space-y-3 flex flex-col flex-grow text-center">
-                  <h3 className="text-xl font-display font-bold text-textPrimary">
-                    {project.title}
-                  </h3>
+                  <Link to={`/projects/${project.slug}`}>
+                    <h3 className="text-xl font-display font-bold text-textPrimary group-hover:text-accent transition-colors">
+                      {project.title}
+                    </h3>
+                  </Link>
                   <p className="text-sm text-textMuted max-w-sm mx-auto mb-2">
                     {project.description}
                   </p>
@@ -68,11 +61,9 @@ export default function Projects() {
                   )}
 
                   <div className="pt-2 mt-auto flex flex-wrap gap-2 justify-center">
-                    {project.liveLink && (
-                      <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center px-5 py-2.5 bg-textPrimary text-bg hover:opacity-90 rounded-full text-xs font-semibold transition-opacity">
-                        Live Demo <span className="ml-2 font-bold">&gt;</span>
-                      </a>
-                    )}
+                    <Link to={`/projects/${project.slug}`} className="inline-flex justify-center items-center px-5 py-2.5 bg-accent text-[#141413] hover:opacity-90 rounded-full text-xs font-semibold transition-opacity">
+                      View Project <span className="ml-2 font-bold">&gt;</span>
+                    </Link>
                     {project.github && (
                       <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 px-5 py-2.5 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-textPrimary rounded-full text-xs font-semibold transition-colors">
                         <FaGithub size={14} /> Code

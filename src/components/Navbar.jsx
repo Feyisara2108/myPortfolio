@@ -37,10 +37,13 @@ export default function Navbar() {
         </div>
         
         <div className="w-[1px] h-5 bg-black/10 dark:bg-white/10 mx-1"></div>
-        
-        <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="ml-1 px-4 py-1.5 bg-textPrimary text-bg rounded-full font-medium text-xs whitespace-nowrap hover:scale-105 transition-transform">
-          My Blog
+
+        <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="hidden sm:inline-block px-3 py-1.5 text-textMuted hover:text-textPrimary rounded-full font-medium text-xs whitespace-nowrap transition-colors">
+          Blog
         </a>
+        <Link to="/resume" className="ml-1 px-4 py-1.5 bg-accent text-[#141413] rounded-full font-semibold text-xs whitespace-nowrap hover:scale-105 transition-transform">
+          Resume
+        </Link>
 
         {/* Theme toggle integrated seamlessly */}
         <button onClick={toggleTheme} className="ml-1 p-2 text-textMuted hover:text-accent rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" title={`Current theme: ${theme}`}>
