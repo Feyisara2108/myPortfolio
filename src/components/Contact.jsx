@@ -64,8 +64,6 @@ export default function Contact() {
         transition={{ duration: 0.5 }}
         className="bg-card w-full rounded-[2rem] p-8 md:p-10 border border-black/5 dark:border-white/5 relative overflow-hidden shadow-2xl"
       >
-        <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-[80px] -z-10 translate-x-1/2 -translate-y-1/2"></div>
-        
         <div className="grid md:grid-cols-2 gap-12 text-center md:text-left relative z-10 items-center">
           <div className="space-y-6">
             <h2 className="text-3xl md:text-5xl font-display font-bold text-textPrimary leading-tight">

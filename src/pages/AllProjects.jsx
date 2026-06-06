@@ -43,7 +43,7 @@ export default function AllProjects() {
                 transition={{ duration: 0.5, delay: (index % 3) * 0.1 }}
                 className="bg-card backdrop-blur-sm border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-3xl overflow-hidden group flex flex-col transition-all"
               >
-                <div className="h-48 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-[#140b16]">
+                <div className="h-48 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-bg">
                   {project.image ? (
                     <img
                       src={project.image}
@@ -51,17 +51,17 @@ export default function AllProjects() {
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-accent/40 via-card to-blue-500/20 p-6 transition-transform duration-500 group-hover:scale-105">
-                      <span className="text-xl font-display font-bold text-white/90 text-center leading-tight drop-shadow-md">
+                    <div className="w-full h-full flex items-center justify-center bg-bg p-6 transition-transform duration-500 group-hover:scale-105">
+                      <span className="text-xl font-display font-bold text-textPrimary text-center leading-tight">
                         {project.title}
                       </span>
                     </div>
                   )}
                   {/* Decorative dots in corners of the image */}
-                  <div className="absolute top-3 left-3 w-1.5 h-1.5 rounded-full bg-white/30 backdrop-blur-md"></div>
-                  <div className="absolute top-3 right-3 w-1.5 h-1.5 rounded-full bg-white/30 backdrop-blur-md"></div>
-                  <div className="absolute bottom-3 left-3 w-1.5 h-1.5 rounded-full bg-white/30 backdrop-blur-md"></div>
-                  <div className="absolute bottom-3 right-3 w-1.5 h-1.5 rounded-full bg-white/30 backdrop-blur-md"></div>
+                  <div className="absolute top-3 left-3 w-1.5 h-1.5 rounded-full bg-textMuted/30"></div>
+                  <div className="absolute top-3 right-3 w-1.5 h-1.5 rounded-full bg-textMuted/30"></div>
+                  <div className="absolute bottom-3 left-3 w-1.5 h-1.5 rounded-full bg-textMuted/30"></div>
+                  <div className="absolute bottom-3 right-3 w-1.5 h-1.5 rounded-full bg-textMuted/30"></div>
                 </div>
                 
                 <div className="p-6 space-y-4 flex flex-col flex-grow">

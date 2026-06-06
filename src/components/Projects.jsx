@@ -28,7 +28,7 @@ export default function Projects() {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 className="bg-card border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-2xl overflow-hidden group flex flex-col transition-all cursor-pointer"
               >
-                <div className="h-48 sm:h-56 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-[#140b16]">
+                <div className="h-48 sm:h-56 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-bg">
                   {project.image ? (
                     <img
                       src={project.image}
@@ -36,17 +36,17 @@ export default function Projects() {
                       className="w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
                     />
                   ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-accent/40 via-card to-blue-500/20 p-6 transition-transform duration-500 group-hover:scale-105">
-                      <span className="text-xl md:text-2xl font-display font-bold text-white/90 text-center leading-tight drop-shadow-md">
+                    <div className="w-full h-full flex items-center justify-center bg-bg p-6 transition-transform duration-500 group-hover:scale-105">
+                      <span className="text-xl md:text-2xl font-display font-bold text-textPrimary text-center leading-tight">
                         {project.title}
                       </span>
                     </div>
                   )}
                   {/* Decorative dots in corners of the image */}
-                  <div className="absolute top-4 left-4 w-1.5 h-1.5 rounded-full bg-white/40 backdrop-blur-md"></div>
-                  <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-white/40 backdrop-blur-md"></div>
-                  <div className="absolute bottom-4 left-4 w-1.5 h-1.5 rounded-full bg-white/40 backdrop-blur-md"></div>
-                  <div className="absolute bottom-4 right-4 w-1.5 h-1.5 rounded-full bg-white/40 backdrop-blur-md"></div>
+                  <div className="absolute top-4 left-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
+                  <div className="absolute top-4 right-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
+                  <div className="absolute bottom-4 left-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
+                  <div className="absolute bottom-4 right-4 w-1.5 h-1.5 rounded-full bg-textMuted/40"></div>
                 </div>
                 
                 <div className="p-6 space-y-3 flex flex-col flex-grow text-center">

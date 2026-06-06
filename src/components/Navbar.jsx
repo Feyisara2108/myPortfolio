@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaSun, FaMoon, FaAdjust } from 'react-icons/fa';
+import { FaGithub, FaSun, FaMoon } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { FiHome } from 'react-icons/fi';
 import { profileData } from '../data/projects';
@@ -12,7 +12,6 @@ export default function Navbar() {
 
   const getThemeIcon = () => {
     if (theme === 'light') return <FaSun size={18} />;
-    if (theme === 'dim') return <FaAdjust size={18} />;
     return <FaMoon size={18} />;
   };
 

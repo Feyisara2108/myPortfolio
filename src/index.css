@@ -12,28 +12,21 @@
 }
 
 @layer base {
+  /* Minimal Luxury palette — monochromatic, #141413 / #AFACA1 / #BDBBB2 / #C9C8BF */
   :root {
-    --theme-bg: #0b040c;
-    --theme-card: #140b16;
-    --theme-text-primary: #ffffff;
-    --theme-text-muted: #a39ca5;
-    --theme-accent: #6f1cd7;
+    --theme-bg: #141413;
+    --theme-card: #1e1d1b;
+    --theme-text-primary: #c9c8bf;
+    --theme-text-muted: #afaca1;
+    --theme-accent: #bdbbb2;
   }
 
   .theme-light {
-    --color-bg: #f8f9fa;
-    --color-card: #ffffff;
-    --color-accent: #6F1CD7;
-    --color-textPrimary: #0f172a;
-    --color-textMuted: #475569;
-  }
-
-  .theme-dim {
-    --color-bg: #1e1e24;
-    --color-card: #2b2b36;
-    --color-accent: #9254de;
-    --color-textPrimary: #e2e8f0;
-    --color-textMuted: #94a3b8;
+    --color-bg: #c9c8bf;
+    --color-card: #d6d5cd;
+    --color-accent: #141413;
+    --color-textPrimary: #141413;
+    --color-textMuted: #57564f;
   }
 
   body {

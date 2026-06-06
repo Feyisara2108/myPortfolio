@@ -11,9 +11,7 @@ export default function Hero() {
   return (
     <section id="home" className="pt-32 md:pt-40 pb-10 px-6 md:px-12 max-w-6xl mx-auto flex flex-col items-center">
       <div className="w-full max-w-4xl max-auto text-center pb-8 border-b border-black/5 dark:border-white/5 relative">
-        <div className="absolute inset-0 z-[-1] bg-gradient-to-b from-accent/5 to-transparent blur-3xl opacity-50 rounded-full"></div>
-        
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

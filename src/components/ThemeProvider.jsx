@@ -4,16 +4,17 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // Force dark theme as default per user request
+    // Dark by default; only 'dark' and 'light' are supported now.
     if (typeof window !== 'undefined') {
-      return localStorage.getItem('theme') || 'dark';
+      const stored = localStorage.getItem('theme');
+      return stored === 'light' ? 'light' : 'dark';
     }
     return 'dark';
   });
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.remove('theme-light', 'theme-dark', 'theme-dim');
+    root.classList.remove('theme-light', 'theme-dark');
     if (theme !== 'dark') {
       root.classList.add(`theme-${theme}`);
     }
@@ -21,9 +22,7 @@ export function ThemeProvider({ children }) {
   }, [theme]);
 
   const toggleTheme = () => {
-    const themes = ['dark', 'dim', 'light'];
-    const nextIndex = (themes.indexOf(theme) + 1) % themes.length;
-    setTheme(themes[nextIndex]);
+    setTheme((prev) => (prev === 'dark' ? 'light' : 'dark'));
   };
 
   return (
