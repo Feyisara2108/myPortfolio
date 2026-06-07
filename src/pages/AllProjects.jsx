@@ -45,7 +45,7 @@ export default function AllProjects() {
                 className="bg-card backdrop-blur-sm border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-3xl overflow-hidden group flex flex-col transition-all"
               >
                 <Link to={`/projects/${project.slug}`} className="block">
-                  <div className="h-52 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-bg">
+                  <div className="h-52 overflow-hidden relative bg-bg">
                     <ProjectCover project={project} className="group-hover:scale-105 transition-transform duration-500" />
                     {project.status && (
                       <span className="absolute top-3 left-3 text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/90 font-semibold">

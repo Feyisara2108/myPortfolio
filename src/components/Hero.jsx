@@ -12,7 +12,7 @@ export default function Hero() {
 
   return (
     <section id="home" className="pt-32 md:pt-40 pb-10 px-6 md:px-12 max-w-6xl mx-auto flex flex-col items-center">
-      <div className="w-full max-w-4xl max-auto text-center pb-8 border-b border-black/5 dark:border-white/5 relative">
+      <div className="w-full max-w-4xl max-auto text-center pb-8 relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}

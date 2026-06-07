@@ -21,7 +21,7 @@ export default function Resume() {
   return (
     <div className="min-h-screen bg-bg text-textPrimary font-sans transition-colors duration-300 print:bg-white">
       {/* Toolbar — hidden when printing */}
-      <div className="print:hidden sticky top-0 z-40 backdrop-blur-md bg-bg/80 border-b border-black/5 dark:border-white/10">
+      <div className="print:hidden sticky top-0 z-40 backdrop-blur-md bg-bg/80">
         <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
           <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-textMuted hover:text-accent transition-colors">
             <FiArrowLeft size={16} /> Back to portfolio
@@ -48,7 +48,7 @@ export default function Resume() {
       <main className="max-w-3xl mx-auto px-6 md:px-10 py-12 print:py-0 print:px-0">
         <article className="bg-card print:bg-white rounded-2xl print:rounded-none border border-black/5 dark:border-white/5 print:border-0 shadow-xl print:shadow-none p-8 md:p-12 print:p-0 print:text-black">
           {/* Header */}
-          <header className="border-b border-black/10 dark:border-white/10 print:border-black/20 pb-6 mb-6">
+          <header className="pb-6 mb-6">
             <h1 className="text-3xl md:text-4xl font-display font-bold">{profileData.name}</h1>
             <p className="text-lg text-accent font-semibold mt-1">{profileData.role}</p>
             <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-sm text-textMuted print:text-gray-600">

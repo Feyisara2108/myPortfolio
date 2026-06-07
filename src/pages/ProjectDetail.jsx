@@ -168,7 +168,7 @@ export default function ProjectDetail() {
           </div>
 
           {/* Footer CTA */}
-          <div className="mt-14 pt-8 border-t border-black/5 dark:border-white/5 flex flex-wrap items-center justify-between gap-4">
+          <div className="mt-14 pt-8 flex flex-wrap items-center justify-between gap-4">
             <Link to="/projects" className="text-sm font-medium text-textMuted hover:text-accent transition-colors">
               ← Back to all projects
             </Link>

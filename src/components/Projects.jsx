@@ -30,7 +30,7 @@ export default function Projects() {
                 className="bg-card border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-2xl overflow-hidden group flex flex-col transition-all"
               >
                 <Link to={`/projects/${project.slug}`} className="block">
-                  <div className="h-52 sm:h-60 overflow-hidden relative border-b border-black/5 dark:border-white/5 bg-bg">
+                  <div className="h-52 sm:h-60 overflow-hidden relative bg-bg">
                     <ProjectCover project={project} className="opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
                     {project.status && (
                       <span className="absolute top-4 left-4 text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/90 font-semibold">

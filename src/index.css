@@ -12,19 +12,19 @@
 }
 
 @layer base {
-  /* Charcoal + Amber — quiet monochrome base, one warm accent. No gradients. */
+  /* Charcoal + Teal — quiet monochrome base, one cool accent. No gradients. */
   :root {
     --theme-bg: #0e0e10;
     --theme-card: #17171a;
     --theme-text-primary: #ededed;
     --theme-text-muted: #9a9a9a;
-    --theme-accent: #f5a524;
+    --theme-accent: #2dd4bf;
   }
 
   .theme-light {
     --color-bg: #f7f7f5;
     --color-card: #ffffff;
-    --color-accent: #e0920f;
+    --color-accent: #0d9488;
     --color-textPrimary: #1a1a1a;
     --color-textMuted: #5c5c5c;
   }

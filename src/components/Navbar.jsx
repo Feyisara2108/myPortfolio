@@ -25,8 +25,7 @@ export default function Navbar() {
         <Link to="/" className="p-2.5 text-textMuted hover:text-textPrimary bg-transparent hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-all" aria-label="Home">
           <FiHome size={20} />
         </Link>
-        <div className="w-[1px] h-5 bg-black/10 dark:bg-white/10 mx-1"></div>
-        
+
         <div className="flex items-center gap-1">
           <a href={profileData.socials.twitter} target="_blank" rel="noreferrer" className="p-2.5 text-textMuted hover:text-textPrimary rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" aria-label="Twitter">
             <FaXTwitter size={18} />
@@ -35,8 +34,6 @@ export default function Navbar() {
             <FaGithub size={18} />
           </a>
         </div>
-        
-        <div className="w-[1px] h-5 bg-black/10 dark:bg-white/10 mx-1"></div>
 
         <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="hidden sm:inline-block px-3 py-1.5 text-textMuted hover:text-textPrimary rounded-full font-medium text-xs whitespace-nowrap transition-colors">
           Blog
