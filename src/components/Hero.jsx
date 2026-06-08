@@ -31,7 +31,7 @@ export default function Hero() {
           {/* Text Content */}
           <div className="space-y-3">
             <h1 className="text-3xl md:text-5xl lg:text-[4rem] font-bold font-display leading-[1.1] text-textPrimary tracking-tight">
-              Hey, I'm {profileData.name} <br />
+              Hello, I'm {profileData.name} <br />
               <span className="text-2xl md:text-4xl lg:text-5xl">{profileData.role}</span>
             </h1>
             <p className="text-base md:text-lg text-textMuted max-w-2xl mx-auto leading-relaxed">
@@ -56,7 +56,7 @@ export default function Hero() {
         <Marquee
           items={projectItems}
           className="!border-transparent bg-transparent overflow-visible py-4"
-          customAnimationDuration="55s"
+          customAnimationDuration="40s"
           renderItem={(project) => (
             <Link
               to={`/projects/${project.slug}`}

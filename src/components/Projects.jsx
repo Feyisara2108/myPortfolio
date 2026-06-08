@@ -1,9 +1,17 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub } from 'react-icons/fa';
+import { FiArrowRight } from 'react-icons/fi';
 import { projectsData } from '../data/projects';
 import { Link } from 'react-router-dom';
 import ProjectCover from './ProjectCover';
+
+// Home grid leads with the visually-rich, live projects (real screenshots) for an
+// at-a-glance polished feel. The full list — including the smart-contract work —
+// lives on /projects.
+const FEATURED_SLUGS = ['e-commerce', 'space-tourism', 'easybank', 'personal-finance-tracker'];
+const featuredProjects = FEATURED_SLUGS
+  .map((slug) => projectsData.find((p) => p.slug === slug))
+  .filter(Boolean);
 
 export default function Projects() {
   return (
@@ -19,65 +27,48 @@ export default function Projects() {
             Projects
           </h2>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {projectsData.slice(0, 4).map((project, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {featuredProjects.map((project, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="bg-card border border-black/5 dark:border-white/5 shadow-xl hover:shadow-2xl rounded-2xl overflow-hidden group flex flex-col transition-all"
               >
-                <Link to={`/projects/${project.slug}`} className="block">
-                  <div className="h-52 sm:h-60 overflow-hidden relative bg-bg">
-                    <ProjectCover project={project} className="opacity-95 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    {project.status && (
-                      <span className="absolute top-4 left-4 text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-white/90 font-semibold">
-                        {project.status}
-                      </span>
-                    )}
+                <Link
+                  to={`/projects/${project.slug}`}
+                  className="group block w-full rounded-[20px] border border-line bg-card overflow-hidden transition-all hover:-translate-y-1 hover:shadow-xl"
+                >
+                  {/* Image sits in its own rounded frame with a slow zoom on hover */}
+                  <div className="px-5 pt-5 pb-1">
+                    <div className="relative w-full h-[200px] rounded-[16px] overflow-hidden border border-line bg-bg">
+                      <ProjectCover project={project} className="transition-transform duration-[1200ms] ease-out group-hover:scale-110" />
+                    </div>
                   </div>
-                </Link>
 
-                <div className="p-6 space-y-3 flex flex-col flex-grow text-center">
-                  <Link to={`/projects/${project.slug}`}>
-                    <h3 className="text-xl font-display font-bold text-textPrimary group-hover:text-accent transition-colors">
+                  <div className="px-7 pb-7 pt-4">
+                    <h3 className="text-[22px] font-display font-semibold text-textPrimary mb-1.5 group-hover:text-accent transition-colors">
                       {project.title}
                     </h3>
-                  </Link>
-                  <p className="text-sm text-textMuted max-w-sm mx-auto mb-2">
-                    {project.description}
-                  </p>
+                    <p className="text-textMuted text-[15px] leading-relaxed line-clamp-2">
+                      {project.description}
+                    </p>
 
-                  {project.tags && (
-                    <div className="flex flex-wrap gap-2 justify-center mb-2">
-                      {project.tags.map((tag) => (
-                        <span key={tag} className="text-[10px] uppercase tracking-wider px-2.5 py-1 rounded-full bg-black/5 dark:bg-white/10 text-textMuted font-semibold">
-                          {tag}
-                        </span>
-                      ))}
-                    </div>
-                  )}
-
-                  <div className="pt-2 mt-auto flex flex-wrap gap-2 justify-center">
-                    <Link to={`/projects/${project.slug}`} className="inline-flex justify-center items-center px-5 py-2.5 bg-accent text-[#141413] hover:opacity-90 rounded-full text-xs font-semibold transition-opacity">
-                      View Project <span className="ml-2 font-bold">&gt;</span>
-                    </Link>
-                    {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex justify-center items-center gap-2 px-5 py-2.5 bg-black/5 dark:bg-white/10 hover:bg-black/10 dark:hover:bg-white/20 text-textPrimary rounded-full text-xs font-semibold transition-colors">
-                        <FaGithub size={14} /> Code
-                      </a>
-                    )}
+                    <span className="mt-5 inline-flex items-center gap-1.5 bg-textPrimary/[0.06] group-hover:bg-textPrimary/[0.12] text-textPrimary rounded-[14px] px-4 py-2.5 text-sm font-medium transition-all">
+                      View Project
+                      <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={16} />
+                    </span>
                   </div>
-                </div>
+                </Link>
               </motion.div>
             ))}
           </div>
 
           <div className="mt-12 flex justify-center">
-            <Link to="/projects" className="px-8 py-3 bg-textPrimary text-bg rounded-full text-sm font-semibold hover:opacity-90 hover:scale-105 transition-all shadow-lg font-display flex items-center justify-center">
-              View All &gt;
+            <Link to="/projects" className="group inline-flex items-center gap-2 px-7 py-3 bg-textPrimary text-bg rounded-[14px] text-sm font-semibold hover:opacity-90 transition-all font-display">
+              View All
+              <FiArrowRight className="transition-transform duration-300 group-hover:translate-x-1" size={16} />
             </Link>
           </div>
         </motion.div>

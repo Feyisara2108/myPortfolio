@@ -21,31 +21,37 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       className="fixed top-8 w-full z-50 flex justify-center px-4 pointer-events-none"
     >
-      <nav className="pointer-events-auto bg-card/80 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-full px-4 py-2 flex items-center justify-between gap-2 shadow-2xl transition-colors duration-300">
-        <Link to="/" className="p-2.5 text-textMuted hover:text-textPrimary bg-transparent hover:bg-black/5 dark:hover:bg-white/10 rounded-full transition-all" aria-label="Home">
-          <FiHome size={20} />
-        </Link>
+      <nav className="pointer-events-auto relative overflow-hidden flex items-center gap-1 rounded-[20px] border border-black/10 dark:border-white/10 bg-white/55 dark:bg-card/60 backdrop-blur-xl px-1.5 py-1.5 shadow-lg shadow-black/5">
+        {/* 'Liquid glass' shine — inset highlight on the frosted panel */}
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 rounded-[20px] [box-shadow:inset_1.5px_1.5px_1px_rgba(255,255,255,0.7),inset_-1px_-1px_1px_1px_rgba(255,255,255,0.45)] dark:[box-shadow:inset_1px_1px_1px_rgba(255,255,255,0.12),inset_-1px_-1px_1px_rgba(255,255,255,0.06)]"
+        />
 
-        <div className="flex items-center gap-1">
-          <a href={profileData.socials.twitter} target="_blank" rel="noreferrer" className="p-2.5 text-textMuted hover:text-textPrimary rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" aria-label="Twitter">
-            <FaXTwitter size={18} />
+        <div className="relative z-10 flex items-center gap-1">
+          <Link to="/" className="p-3 hover:px-4 text-textMuted hover:text-textPrimary hover:bg-black/5 dark:hover:bg-white/10 rounded-[15px] transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,2.2)]" aria-label="Home">
+            <FiHome size={19} />
+          </Link>
+
+          <a href={profileData.socials.twitter} target="_blank" rel="noreferrer" className="p-3 hover:px-4 text-textMuted hover:text-textPrimary rounded-[15px] hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,2.2)]" aria-label="Twitter">
+            <FaXTwitter size={17} />
           </a>
-          <a href={profileData.socials.github} target="_blank" rel="noreferrer" className="p-2.5 text-textMuted hover:text-textPrimary rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" aria-label="Github">
-            <FaGithub size={18} />
+          <a href={profileData.socials.github} target="_blank" rel="noreferrer" className="p-3 hover:px-4 text-textMuted hover:text-textPrimary rounded-[15px] hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,2.2)]" aria-label="Github">
+            <FaGithub size={17} />
           </a>
+
+          <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="hidden sm:inline-block px-3 py-2 text-textMuted hover:text-textPrimary rounded-[15px] hover:bg-black/5 dark:hover:bg-white/10 font-medium text-xs whitespace-nowrap transition-all duration-300">
+            Blog
+          </a>
+
+          <Link to="/resume" className="ml-1 px-5 py-2.5 bg-textPrimary text-bg hover:bg-accent rounded-[14px] font-semibold text-xs whitespace-nowrap hover:px-6 transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,2.2)]">
+            Resume
+          </Link>
+
+          <button onClick={toggleTheme} className="ml-0.5 p-2.5 text-textMuted hover:text-accent rounded-[14px] hover:bg-black/5 dark:hover:bg-white/10 transition-all" title={`Current theme: ${theme}`} aria-label="Toggle theme">
+            {getThemeIcon()}
+          </button>
         </div>
-
-        <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="hidden sm:inline-block px-3 py-1.5 text-textMuted hover:text-textPrimary rounded-full font-medium text-xs whitespace-nowrap transition-colors">
-          Blog
-        </a>
-        <Link to="/resume" className="ml-1 px-4 py-1.5 bg-accent text-[#141413] rounded-full font-semibold text-xs whitespace-nowrap hover:scale-105 transition-transform">
-          Resume
-        </Link>
-
-        {/* Theme toggle integrated seamlessly */}
-        <button onClick={toggleTheme} className="ml-1 p-2 text-textMuted hover:text-accent rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-all" title={`Current theme: ${theme}`}>
-          {getThemeIcon()}
-        </button>
       </nav>
     </motion.div>
   );

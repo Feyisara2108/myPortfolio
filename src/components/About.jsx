@@ -75,7 +75,7 @@ export default function About() {
             items={profileData.skills} 
             reverse={true} 
             className="!border-transparent bg-transparent py-2"
-            customAnimationDuration="80s"
+            customAnimationDuration="14s"
             renderItem={(skill) => (
               <div className="flex items-center text-textMuted/40 hover:text-textPrimary transition-colors duration-500 px-4 grayscale hover:grayscale-0 scale-75 md:scale-90">
                 {iconMap[skill] || <span className="text-lg font-bold font-display uppercase tracking-wider">{skill}</span>}

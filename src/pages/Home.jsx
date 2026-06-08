@@ -1,4 +1,5 @@
 import React from 'react';
+import GuideRails from '../components/GuideRails';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
@@ -10,9 +11,10 @@ import Footer from '../components/Footer';
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col selection:bg-accent/30 selection:text-textPrimary overflow-x-hidden">
+    <div className="relative min-h-screen flex flex-col selection:bg-accent/30 selection:text-textPrimary overflow-x-hidden">
+      <GuideRails />
       <Navbar />
-      <main className="flex-1">
+      <main className="relative z-10 flex-1">
         <Hero />
         <About />
         <Projects />

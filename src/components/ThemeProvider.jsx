@@ -4,20 +4,20 @@ const ThemeContext = createContext();
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useState(() => {
-    // Dark by default; only 'dark' and 'light' are supported now.
+    // Light by default; only 'dark' and 'light' are supported.
     if (typeof window !== 'undefined') {
       const stored = localStorage.getItem('theme');
-      return stored === 'light' ? 'light' : 'dark';
+      return stored === 'dark' ? 'dark' : 'light';
     }
-    return 'dark';
+    return 'light';
   });
 
   useEffect(() => {
     const root = document.documentElement;
+    // Always apply an explicit class so theme-scoped selectors
+    // (e.g. [.theme-light &]) resolve correctly in both modes.
     root.classList.remove('theme-light', 'theme-dark');
-    if (theme !== 'dark') {
-      root.classList.add(`theme-${theme}`);
-    }
+    root.classList.add(`theme-${theme}`);
     localStorage.setItem('theme', theme);
   }, [theme]);
 
