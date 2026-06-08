@@ -11,7 +11,7 @@ const RESUME_PROJECT_SLUGS = [
 export default function Resume() {
   useEffect(() => {
     window.scrollTo(0, 0);
-    document.title = `${profileData.name} — Résumé`;
+    document.title = `${profileData.name} | Résumé`;
   }, []);
 
   const featured = RESUME_PROJECT_SLUGS
@@ -27,12 +27,6 @@ export default function Resume() {
             <FiArrowLeft size={16} /> Back to portfolio
           </Link>
           <div className="flex items-center gap-3">
-            <button
-              onClick={() => window.print()}
-              className="hidden sm:inline text-sm font-medium text-textMuted hover:text-accent transition-colors"
-            >
-              Print
-            </button>
             <a
               href="/Mutmahinat-Arowolo-Resume.pdf"
               download
@@ -87,7 +81,7 @@ export default function Resume() {
                   <div className="flex flex-wrap items-baseline justify-between gap-x-3">
                     <h3 className="font-semibold">
                       {p.title}
-                      {p.role && <span className="font-normal text-textMuted print:text-gray-600"> — {p.role}</span>}
+                      {p.role && <span className="font-normal text-textMuted print:text-gray-600">, {p.role}</span>}
                     </h3>
                     <span className="text-xs text-textMuted print:text-gray-500">{p.tags?.join(' · ')}</span>
                   </div>
@@ -103,7 +97,7 @@ export default function Resume() {
               {resumeData.education.map((e, i) => (
                 <div key={i}>
                   <div className="flex flex-wrap items-baseline justify-between gap-x-3">
-                    <h3 className="font-semibold">{e.school} <span className="font-normal text-textMuted print:text-gray-600">— {e.program}</span></h3>
+                    <h3 className="font-semibold">{e.school} <span className="font-normal text-textMuted print:text-gray-600">· {e.program}</span></h3>
                     <span className="text-xs text-textMuted print:text-gray-500">{e.dates}</span>
                   </div>
                   <p className="text-sm text-textMuted print:text-gray-700 mt-0.5">{e.detail}</p>

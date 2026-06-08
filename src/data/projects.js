@@ -30,7 +30,7 @@ export const profileData = {
 // page, the "Download PDF" print view, and the static PDF never drift apart.
 export const resumeData = {
   summary:
-    "Frontend & blockchain developer specializing in scalable React/Next.js interfaces and secure smart contracts on Ethereum (Solidity, Foundry, Hardhat) and Stellar (Soroban, Rust). Comfortable across the full dApp stack — writing and testing contracts, deploying to testnets, and building the frontends that consume them. Active open-source contributor in the web3 ecosystem.",
+    "Frontend & blockchain developer specializing in scalable React/Next.js interfaces and secure smart contracts on Ethereum (Solidity, Foundry, Hardhat) and Stellar (Soroban, Rust). Comfortable across the full dApp stack: writing and testing contracts, deploying to testnets, and building the frontends that consume them. Active open-source contributor in the web3 ecosystem.",
   competencies: [
     { label: "Languages", value: "JavaScript, TypeScript, Solidity, Rust (Soroban), HTML5, CSS3" },
     { label: "Frontend", value: "React, Next.js, Vite, Tailwind CSS, Framer Motion, React Router; Vue (familiar)" },
@@ -40,7 +40,7 @@ export const resumeData = {
   education: [
     {
       school: "AltSchool Africa",
-      program: "Software Engineering — Frontend Track",
+      program: "Software Engineering, Frontend Track",
       dates: "Nov 2024 – Present",
       detail: "Structured frontend engineering program covering modern JavaScript, React, Next.js, TypeScript, and professional software practices.",
     },
@@ -58,7 +58,7 @@ export const resumeData = {
     },
   ],
   openSource: [
-    "Active contributor to open-source web3 protocols (e.g. StellarGive on Stellar Soroban — 61 commits).",
+    "Active contributor to open-source web3 protocols (e.g. StellarGive on Stellar Soroban, 61 commits).",
     "Participant in hackathons and collaborative team builds within the Stellar and Ethereum ecosystems.",
     "Technical writer on Hashnode (hashnode.com/@ayokomi).",
   ],
@@ -72,7 +72,7 @@ export const projectsData = [
     slug: "stellargive",
     title: "StellarGive",
     tagline: "Transparent on-chain crowdfunding on Stellar Soroban.",
-    description: "Transparent crowdfunding protocol on Stellar Soroban. Open-source contributor (61 commits) — built smart-contract logic and tests for a testnet-deployed donation platform with full CI/CD.",
+    description: "Transparent crowdfunding protocol on Stellar Soroban. Open-source contributor (61 commits) who built smart-contract logic and tests for a testnet-deployed donation platform with full CI/CD.",
     role: "Open-source contributor",
     status: "Open source · Stellar testnet",
     github: "https://github.com/Feyisara2108/stellargive",
@@ -101,7 +101,7 @@ export const projectsData = [
     ],
     challenges: [
       "Working in Rust/Soroban's resource-metered environment, where contract storage and execution cost must be kept lean.",
-      "Collaborating in an open-source codebase — matching existing conventions and keeping tests green across contributors.",
+      "Collaborating in an open-source codebase, matching existing conventions and keeping tests green across contributors.",
     ],
   },
   {
@@ -116,7 +116,7 @@ export const projectsData = [
     image: null,
     tags: ["Solidity", "Foundry", "React", "IPFS"],
     overview:
-      "ScholarChain is a decentralized grant protocol that distributes funding entirely on-chain. Approved recipients receive a Soul-Bound Token (SBT) — a non-transferable NFT that acts as immutable, verifiable 'proof of grant'. Built as a team project on Ethereum (Sepolia).",
+      "ScholarChain is a decentralized grant protocol that distributes funding entirely on-chain. Approved recipients receive a Soul-Bound Token (SBT), a non-transferable NFT that acts as immutable, verifiable 'proof of grant'. Built as a team project on Ethereum (Sepolia).",
     problem:
       "Grant and scholarship distribution is opaque: applicants can't see how decisions are made, and 'proof' that someone received a grant is easily forged or lost. ScholarChain makes approvals transparent and the resulting credential permanent and tamper-proof.",
     contribution: [
@@ -154,7 +154,7 @@ export const projectsData = [
     image: null,
     tags: ["Solidity", "Foundry", "Hardhat", "EIP-2535"],
     overview:
-      "An upgradeable, NFT-collateralized lending protocol built on the EIP-2535 'Diamond' proxy standard. The system is split into independent facets — ERC-20, ERC-721, and borrowing — that share a single storage layout, allowing logic to be upgraded without redeploying or migrating state.",
+      "An upgradeable, NFT-collateralized lending protocol built on the EIP-2535 'Diamond' proxy standard. The system is split into independent facets (ERC-20, ERC-721, and borrowing) that share a single storage layout, allowing logic to be upgraded without redeploying or migrating state.",
     problem:
       "A monolithic contract hits the 24KB size limit and can't be upgraded without redeploying and migrating everything. The Diamond standard solves both: it routes calls to small, swappable facets behind one address, so the protocol can grow and be patched in place.",
     contribution: [
@@ -174,7 +174,7 @@ export const projectsData = [
       "Clean separation of token and lending concerns into facets.",
     ],
     challenges: [
-      "Avoiding storage-slot collisions between facets — the core hazard of the Diamond pattern.",
+      "Avoiding storage-slot collisions between facets, the core hazard of the Diamond pattern.",
       "Keeping the diamondCut upgrade path safe so logic can change without corrupting state.",
     ],
   },
@@ -191,7 +191,7 @@ export const projectsData = [
     overview:
       "A multi-signature wallet smart contract: funds can only move when a required number of designated owners approve the same transaction. It's the pattern teams and DAOs use to remove single-key risk from a treasury.",
     problem:
-      "A single private key is a single point of failure — lose it or leak it and the funds are gone. A multisig requires M-of-N owners to agree, so no one person (or one compromised key) can drain the wallet.",
+      "A single private key is a single point of failure: lose it or leak it and the funds are gone. A multisig requires M-of-N owners to agree, so no one person (or one compromised key) can drain the wallet.",
     contribution: [
       "Designed the propose → approve → execute transaction lifecycle in Solidity.",
       "Enforced the M-of-N approval threshold and owner-only access control.",
@@ -225,7 +225,7 @@ export const projectsData = [
     overview:
       "A complete testnet faucet dApp: an ERC-20 token plus a faucet contract that dispenses it, wired to a React frontend where developers can connect a wallet and claim tokens for testing.",
     problem:
-      "Developers building on a testnet constantly need test tokens. A faucet automates that distribution and demonstrates an end-to-end dApp — contract, deployment, tests, and a working UI — in one project.",
+      "Developers building on a testnet constantly need test tokens. A faucet automates that distribution and demonstrates an end-to-end dApp (contract, deployment, tests, and a working UI) in one project.",
     contribution: [
       "Wrote the ERC-20 token and faucet contracts in Solidity.",
       "Authored deployment scripts and a Hardhat test suite.",
@@ -295,7 +295,7 @@ export const projectsData = [
     overview:
       "A Merkle-tree-based verifier for airdrops and whitelists. Instead of storing thousands of eligible addresses on-chain, only a single 32-byte Merkle root is stored; each user proves eligibility by submitting a Merkle proof.",
     problem:
-      "Storing a large allowlist on-chain is prohibitively expensive — every address costs gas. A Merkle tree compresses the entire list into one root hash, so eligibility checks stay cheap no matter how big the list is.",
+      "Storing a large allowlist on-chain is prohibitively expensive: every address costs gas. A Merkle tree compresses the entire list into one root hash, so eligibility checks stay cheap no matter how big the list is.",
     contribution: [
       "Built the Merkle tree generation and proof tooling in JavaScript.",
       "Implemented on-chain proof verification against the stored root.",
@@ -327,7 +327,7 @@ export const projectsData = [
     overview:
       "A full TypeScript + React web application with a polished, responsive product interface, deployed to production on Vercel.",
     problem:
-      "Demonstrates building a complete, type-safe single-page application end to end — from component architecture to a deployed, responsive production build.",
+      "Demonstrates building a complete, type-safe single-page application end to end, from component architecture to a deployed, responsive production build.",
     contribution: [
       "Built the application in React with TypeScript for type safety.",
       "Designed a responsive, polished UI.",
@@ -421,7 +421,7 @@ export const projectsData = [
     image: "/images/screenshot.jpg",
     tags: ["HTML", "CSS", "JavaScript"],
     overview:
-      "A multi-page space-tourism front-end with immersive visuals and custom navigation — a UI/UX-focused build emphasizing layout, typography, and interaction.",
+      "A multi-page space-tourism front-end with immersive visuals and custom navigation, a UI/UX-focused build emphasizing layout, typography, and interaction.",
     problem:
       "A classic front-end challenge in translating a rich multi-page design into a faithful, responsive, accessible implementation.",
     contribution: [
