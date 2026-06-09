@@ -11,7 +11,7 @@ export default function Footer() {
     <footer className="relative z-10 w-full mt-auto">
       <div className="max-w-[53rem] mx-auto px-6 py-10 flex flex-col items-center justify-center gap-6 text-center">
         <p className="text-textMuted text-sm font-medium">
-          © {currentYear} Mutmahinat Arowolo. All rights reserved.
+          © {currentYear} Mutmahinat Feyisara Arowolo. All rights reserved.
         </p>
 
         <div className="flex items-center justify-center gap-3">

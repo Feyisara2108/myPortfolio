@@ -1,4 +1,4 @@
-# Mutmahinat Arowolo ("Ayokomi")
+# Mutmahinat Feyisara Arowolo ("Ayokomi")
 **Frontend & Blockchain Developer**
 
 📧 ayokomi2108@gmail.com · 🌐 [Portfolio](https://my-portfolio-eight-iota-82.vercel.app) · 💻 [GitHub](https://github.com/Feyisara2108) · 🐦 [X/Twitter](https://x.com/Ayokomi21) · ✍️ [Blog](https://hashnode.com/@ayokomi)

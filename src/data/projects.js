@@ -1,11 +1,11 @@
 export const profileData = {
-  name: "Mutmahinat Arowolo",
+  name: "Mutmahinat Feyisara Arowolo",
   nickname: "Ayokomi",
   role: "Frontend & Blockchain Developer",
   tagline: "Building robust, scalable applications and decentralized solutions. Passionate about empowering the future of the web.",
   bio: [
     "I like to craft solid and scalable products with exceptional user experiences, focusing on innovation and problem-solving across various industries.",
-    "I'm Mutmahinat Arowolo, a developer with extensive experience in scalable frontends and secure smart contracts. I specialize in building high-fidelity web/dApp applications and decentralized protocols.",
+    "I'm Mutmahinat Feyisara Arowolo, a developer with extensive experience in scalable frontends and secure smart contracts. I specialize in building high-fidelity web/dApp applications and decentralized protocols.",
     "A passionate web3 advocate, I am deeply involved in modern frontend frameworks and Ethereum ecosystems. My core tech stack includes React, Next.js, and Solidity."
   ],
   socials: {

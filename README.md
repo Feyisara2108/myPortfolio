@@ -1,6 +1,6 @@
-# Mutmahinat Arowolo — Portfolio
+# Mutmahinat Feyisara Arowolo — Portfolio
 
-Personal portfolio of **Mutmahinat Arowolo** (Ayokomi), a Frontend & Blockchain developer.
+Personal portfolio of **Mutmahinat Feyisara Arowolo** (Ayokomi), a Frontend & Blockchain developer.
 Showcases web3 / smart-contract work and frontend projects, with per-project case-study
 pages and a downloadable résumé.
 

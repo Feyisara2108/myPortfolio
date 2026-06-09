@@ -1,4 +1,4 @@
-# Mutmahinat Arowolo
+# Mutmahinat Feyisara Arowolo
 ### Frontend & Blockchain Developer · "Ayokomi"
 
 **Email:** ayokomi2108@gmail.com
