@@ -40,7 +40,11 @@ export default function ProjectCover({ project, className = '' }) {
     return (
       <img
         src={project.image}
-        alt={project.title}
+        alt={`${project.title} user interface`}
+        width="1280"
+        height="800"
+        loading="lazy"
+        decoding="async"
         className={`w-full h-full object-cover ${className}`}
       />
     );

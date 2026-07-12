@@ -8,7 +8,7 @@ import ProjectCover from './ProjectCover';
 // Home grid leads with the visually-rich, live projects (real screenshots) for an
 // at-a-glance polished feel. The full list — including the smart-contract work —
 // lives on /projects.
-const FEATURED_SLUGS = ['e-commerce', 'space-tourism', 'easybank', 'personal-finance-tracker'];
+const FEATURED_SLUGS = ['e-commerce', 'space-tourism', 'personal-finance-tracker', 'stellargive'];
 const featuredProjects = FEATURED_SLUGS
   .map((slug) => projectsData.find((p) => p.slug === slug))
   .filter(Boolean);

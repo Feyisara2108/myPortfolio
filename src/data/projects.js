@@ -346,7 +346,7 @@ export const projectsData = [
     status: "Live in production",
     github: "https://github.com/Feyisara2108/personal-finance-tracker",
     liveLink: "https://personal-finance-tracker-azure-alpha.vercel.app",
-    image: null,
+    image: "/images/finance-tracker.png",
     tags: ["JavaScript", "React", "Frontend"],
     overview:
       "A finance-tracking application for managing income, expenses, and budgets, surfaced through a clean dashboard. Live in production on Vercel.",
@@ -378,7 +378,7 @@ export const projectsData = [
     status: "Live · Next.js + TypeScript",
     github: "https://github.com/Feyisara2108/e-commerce",
     liveLink: "https://e-commerce-psi-kohl-81.vercel.app/",
-    image: "/images/screenshot1.jpg",
+    image: "/images/ecommerce.png",
     tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     overview:
       "A responsive e-commerce storefront built with Next.js 15 (React 19) and TypeScript, styled with Tailwind CSS — focused on a fast, type-safe, component-driven shopping interface.",
@@ -410,7 +410,7 @@ export const projectsData = [
     status: "Live in production",
     github: "https://github.com/Feyisara2108/space-tourism",
     liveLink: "https://space-tourism-lake-two.vercel.app/",
-    image: "/images/screenshot.jpg",
+    image: "/images/space-tourism.png",
     tags: ["HTML", "CSS", "JavaScript"],
     overview:
       "A multi-page space-tourism front-end with immersive visuals and custom navigation, a UI/UX-focused build emphasizing layout, typography, and interaction.",
@@ -433,37 +433,6 @@ export const projectsData = [
       "Reproducing a detailed design precisely without a framework.",
     ],
   },
-  {
-    slug: "easybank",
-    title: "Easybank Landing Page",
-    tagline: "A clean, conversion-focused virtual-banking landing page.",
-    description: "A clean and modern UI representing a virtual banking experience, designed for flawless conversion and accessibility.",
-    status: "Live",
-    github: "https://github.com/Feyisara2108/Easybank-landing-page",
-    liveLink: "https://feyisara2108.github.io/Easybank-landing-page/",
-    image: "/images/screenshot2.jpg",
-    tags: ["UI/UX", "JavaScript", "HTML"],
-    overview:
-      "A modern landing page for a virtual-banking brand, built with a focus on clean UI, accessibility, and conversion.",
-    problem:
-      "Landing pages need to communicate value fast and convert. This build emphasizes hierarchy, responsiveness, and accessible markup.",
-    contribution: [
-      "Built the landing page UI and interactions.",
-      "Focused on responsive, accessible markup.",
-      "Deployed on GitHub Pages.",
-    ],
-    architecture: [
-      "HTML/CSS/JavaScript landing page.",
-      "Responsive, accessible layout.",
-    ],
-    features: [
-      "Clean, conversion-oriented design.",
-      "Responsive and accessible.",
-    ],
-    challenges: [
-      "Balancing visual polish with accessibility and performance.",
-    ],
-  }
 ];
 
 export const getProjectBySlug = (slug) =>

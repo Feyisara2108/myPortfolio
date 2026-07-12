@@ -24,6 +24,3 @@ dist-ssr
 *.sln
 *.sw?
 .vite/
-
-# Scratch: README templates to copy into other repos (not part of the portfolio)
-readme-templates/
