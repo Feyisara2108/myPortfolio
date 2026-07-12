@@ -1,3 +1,9 @@
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { profileData } from '../data/projects';
@@ -75,6 +81,36 @@ export default function Contact() {
             <div className="pt-2">
               <a href={`mailto:${profileData.socials.email}`} className="text-base md:text-lg font-medium hover:opacity-80 transition-opacity underline underline-offset-4 text-textPrimary">
                 {profileData.socials.email}
+              </a>
+            </div>
+
+            {/* Low-friction shortcuts: recruiters can grab the résumé or profiles in one click */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-2 pt-1">
+              <a
+                href={profileData.resumeUrl || "/Mutmahinat-Arowolo-Resume.pdf"}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium text-textPrimary bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full px-4 py-1.5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+              >
+                Download Résumé
+              </a>
+              {profileData.socials.linkedin && (
+                <a
+                  href={profileData.socials.linkedin}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-sm font-medium text-textPrimary bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full px-4 py-1.5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+                >
+                  LinkedIn
+                </a>
+              )}
+              <a
+                href={profileData.socials.github}
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm font-medium text-textPrimary bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full px-4 py-1.5 hover:bg-black/10 dark:hover:bg-white/10 transition-all"
+              >
+                GitHub
               </a>
             </div>
           </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaSun, FaMoon } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaSun, FaMoon } from 'react-icons/fa';
 import { FaXTwitter } from 'react-icons/fa6';
 import { FiHome } from 'react-icons/fi';
 import { profileData } from '../data/projects';
@@ -39,6 +39,12 @@ export default function Navbar() {
           <a href={profileData.socials.github} target="_blank" rel="noreferrer" className="p-3 hover:px-4 text-textMuted hover:text-textPrimary rounded-[15px] hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,2.2)]" aria-label="Github">
             <FaGithub size={17} />
           </a>
+
+          {profileData.socials.linkedin && (
+            <a href={profileData.socials.linkedin} target="_blank" rel="noreferrer" className="p-3 hover:px-4 text-textMuted hover:text-textPrimary rounded-[15px] hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,2.2)]" aria-label="LinkedIn">
+              <FaLinkedin size={17} />
+            </a>
+          )}
 
           <a href={profileData.socials.blog} target="_blank" rel="noreferrer" className="hidden sm:inline-block px-3 py-2 text-textMuted hover:text-textPrimary rounded-[15px] hover:bg-black/5 dark:hover:bg-white/10 font-medium text-xs whitespace-nowrap transition-all duration-300">
             Blog

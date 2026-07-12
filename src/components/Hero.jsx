@@ -21,9 +21,12 @@ export default function Hero() {
         >
           {/* Avatar Image */}
           <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-xl mb-1">
-            <img 
-              src="/images/QKRU2729.JPG" 
-              alt={profileData.name} 
+            <img
+              src="/images/QKRU2729.JPG"
+              alt={`Portrait of ${profileData.name}`}
+              width="96"
+              height="96"
+              fetchpriority="high"
               className="w-full h-full object-cover scale-105"
             />
           </div>
@@ -31,21 +34,41 @@ export default function Hero() {
           {/* Text Content */}
           <div className="space-y-3">
             <h1 className="text-3xl md:text-5xl lg:text-[4rem] font-bold font-display leading-[1.1] text-textPrimary tracking-tight">
-              Hello, I'm {profileData.name} <br />
-              <span className="text-2xl md:text-4xl lg:text-5xl">{profileData.role}</span>
+              {profileData.name} <br />
+              <span className="text-2xl md:text-4xl lg:text-5xl text-accent">{profileData.role}</span>
             </h1>
             <p className="text-base md:text-lg text-textMuted max-w-2xl mx-auto leading-relaxed">
               {profileData.tagline}
             </p>
           </div>
-          
-          <div className="flex flex-wrap items-center justify-center gap-4 pt-6">
-            <a href="#contact" className="px-8 py-3.5 rounded-full bg-accent text-[#141413] font-semibold hover:opacity-90 transition-opacity">
-              Hire Me
+
+          {/* Roles I'm open to — immediate fit signal for recruiters */}
+          <div className="flex flex-wrap items-center justify-center gap-2 pt-1">
+            <span className="text-sm text-textMuted">Open to:</span>
+            {profileData.rolesSeeking.map((role) => (
+              <span
+                key={role}
+                className="text-xs md:text-sm font-medium text-textPrimary bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full px-3 py-1"
+              >
+                {role}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex flex-wrap items-center justify-center gap-3 pt-6">
+            <Link to="/projects" className="px-7 py-3.5 rounded-full bg-accent text-[#141413] font-semibold hover:opacity-90 transition-opacity">
+              View Projects
+            </Link>
+            <a
+              href={profileData.resumeUrl || "/Mutmahinat-Arowolo-Resume.pdf"}
+              target="_blank"
+              rel="noreferrer"
+              className="px-6 py-3.5 rounded-full border border-black/10 dark:border-white/10 text-textPrimary font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all"
+            >
+              Download Résumé
             </a>
-            <a href="#contact" className="px-6 py-3.5 rounded-full border border-black/10 dark:border-white/10 text-textPrimary font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all flex items-center gap-2">
-              <span className="w-2.5 h-2.5 rounded-full bg-green-500 animate-[pulse_2s_cubic-bezier(0.4,0,0.6,1)_infinite]"></span>
-              Available for projects
+            <a href="#contact" className="px-6 py-3.5 rounded-full border border-black/10 dark:border-white/10 text-textPrimary font-medium hover:bg-black/5 dark:hover:bg-white/5 transition-all">
+              Contact
             </a>
           </div>
         </motion.div>

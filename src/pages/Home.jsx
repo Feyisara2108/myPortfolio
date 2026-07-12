@@ -3,6 +3,7 @@ import GuideRails from '../components/GuideRails';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import Skills from '../components/Skills';
 import Projects from '../components/Projects';
 import Experience from '../components/Experience';
 import HowCanIHelp from '../components/HowCanIHelp';
@@ -17,6 +18,7 @@ export default function Home() {
       <main className="relative z-10 flex-1">
         <Hero />
         <About />
+        <Skills />
         <Projects />
         <Experience />
         <HowCanIHelp />

@@ -1,28 +1,52 @@
 export const profileData = {
   name: "Mutmahinat Feyisara Arowolo",
   nickname: "Ayokomi",
-  role: "Frontend & Blockchain Developer",
-  tagline: "Building robust, scalable applications and decentralized solutions. Passionate about empowering the future of the web.",
+  role: "Frontend Engineer & Web3 Developer",
+  // One factual line: what I build + the stack. No clichés, no "passionate".
+  tagline: "I build responsive, accessible web apps with React, Next.js, and TypeScript — and the Web3 layer that connects them to Ethereum and Stellar smart contracts.",
+  // Résumé link used by every "Download Résumé" CTA. Paste your hosted résumé URL
+  // (Google Drive, Dropbox, etc.) here; until then it falls back to the local PDF.
+  resumeUrl: "",
+  // Roles I'm actively looking for — surfaced in the hero so recruiters see fit immediately.
+  rolesSeeking: [
+    "Frontend Engineer",
+    "React Developer",
+    "Next.js Developer",
+    "Web3 Frontend Developer",
+  ],
+  // About copy: an engineer introducing themselves. Concise, factual, early-career-honest.
   bio: [
-    "I like to craft solid and scalable products with exceptional user experiences, focusing on innovation and problem-solving across various industries.",
-    "I'm Mutmahinat Feyisara Arowolo, a developer with extensive experience in scalable frontends and secure smart contracts. I specialize in building high-fidelity web/dApp applications and decentralized protocols.",
-    "A passionate web3 advocate, I am deeply involved in modern frontend frameworks and Ethereum ecosystems. My core tech stack includes React, Next.js, and Solidity."
+    "I'm a frontend engineer focused on React, Next.js, and TypeScript, styling with Tailwind CSS. I build responsive, accessible interfaces and wire them to on-chain logic — wallet connections, contract calls, and data dashboards.",
+    "I trained in frontend engineering at AltSchool Africa and in blockchain development at Web3Bridge Africa. My work spans production React apps and tested smart contracts on Ethereum (Solidity, Foundry, Hardhat) and Stellar (Soroban, Rust). I care about clean component structure, test coverage, and shipping to production.",
   ],
   socials: {
     twitter: "https://x.com/Ayokomi21",
     github: "https://github.com/Feyisara2108",
+    linkedin: "", // TODO: add LinkedIn profile URL — top recruiter channel
     blog: "https://hashnode.com/@ayokomi",
     instagram: "https://instagram.com/mutmahinat_",
     email: "ayokomi2108@gmail.com"
   },
+  // Flat list used by the decorative marquees. Only tech demonstrated in the projects below.
   skills: [
     "JavaScript",
+    "TypeScript",
     "React",
     "Next.js",
     "Tailwind CSS",
     "Solidity",
+    "Foundry",
+    "Hardhat",
     "HTML",
     "CSS"
+  ],
+  // Categorized skills for the recruiter-facing Skills section. Every item is
+  // demonstrated in a project or the résumé — nothing aspirational.
+  skillGroups: [
+    { category: "Languages", items: ["JavaScript", "TypeScript", "Solidity", "Rust (Soroban)", "HTML", "CSS"] },
+    { category: "Frontend", items: ["React", "Next.js", "Vite", "Tailwind CSS", "Framer Motion", "React Router"] },
+    { category: "Web3", items: ["Foundry", "Hardhat", "Soroban", "ERC-20 / ERC-721", "IPFS / Pinata", "Merkle proofs"] },
+    { category: "Tooling & Deployment", items: ["Git & GitHub", "GitHub Actions", "Codecov", "Vercel"] },
   ],
 };
 
@@ -58,7 +82,7 @@ export const resumeData = {
     },
   ],
   openSource: [
-    "Active contributor to open-source web3 protocols (e.g. StellarGive on Stellar Soroban, 61 commits).",
+    "Leading contributor to open-source web3 protocols (e.g. StellarGive on Stellar Soroban — 180+ commits, top contributor).",
     "Participant in hackathons and collaborative team builds within the Stellar and Ethereum ecosystems.",
     "Technical writer on Hashnode (hashnode.com/@ayokomi).",
   ],
@@ -72,8 +96,8 @@ export const projectsData = [
     slug: "stellargive",
     title: "StellarGive",
     tagline: "Transparent on-chain crowdfunding on Stellar Soroban.",
-    description: "Transparent crowdfunding protocol on Stellar Soroban. Open-source contributor (61 commits) who built smart-contract logic and tests for a testnet-deployed donation platform with full CI/CD.",
-    role: "Open-source contributor",
+    description: "Transparent crowdfunding protocol on Stellar Soroban. Leading contributor (180+ commits) who built smart-contract logic and tests for a testnet-deployed donation platform with full CI/CD.",
+    role: "Lead open-source contributor",
     status: "Open source · Stellar testnet",
     github: "https://github.com/Feyisara2108/stellargive",
     liveLink: null,
@@ -84,7 +108,7 @@ export const projectsData = [
     problem:
       "Traditional crowdfunding relies on a trusted intermediary that holds the funds and reports where they went. Donors have no cryptographic guarantee that money reaches the campaign, and platforms can freeze or skim balances. StellarGive removes that trust assumption by settling everything on a public ledger.",
     contribution: [
-      "Contributed 61 commits to the protocol as an open-source collaborator.",
+      "Top contributor to the protocol with 180+ commits as an open-source collaborator.",
       "Implemented and refined Soroban smart-contract logic for campaign and donation flows.",
       "Wrote contract tests to validate behaviour and guard against regressions.",
       "Worked within a CI/CD pipeline (GitHub Actions) with Codecov coverage reporting.",
@@ -120,7 +144,7 @@ export const projectsData = [
     problem:
       "Grant and scholarship distribution is opaque: applicants can't see how decisions are made, and 'proof' that someone received a grant is easily forged or lost. ScholarChain makes approvals transparent and the resulting credential permanent and tamper-proof.",
     contribution: [
-      "Contributed to the on-chain grant-distribution logic in Solidity.",
+      "Contributed 42 commits (2nd of 6 contributors) to the on-chain grant-distribution logic in Solidity.",
       "Helped implement Soul-Bound Token issuance as non-transferable proof of grant.",
       "Worked on the Foundry test suite that reached 100% coverage.",
       "Integrated proposal metadata storage on IPFS via Pinata.",
@@ -315,38 +339,6 @@ export const projectsData = [
     ],
   },
   {
-    slug: "safe",
-    title: "Safe",
-    tagline: "A polished, production TypeScript/React web application.",
-    description: "A full TypeScript web application built with React. A polished, responsive product interface deployed to production.",
-    status: "Live in production",
-    github: "https://github.com/Feyisara2108/safe",
-    liveLink: "https://safe-kappa-umber.vercel.app",
-    image: null,
-    tags: ["TypeScript", "React", "Frontend"],
-    overview:
-      "A full TypeScript + React web application with a polished, responsive product interface, deployed to production on Vercel.",
-    problem:
-      "Demonstrates building a complete, type-safe single-page application end to end, from component architecture to a deployed, responsive production build.",
-    contribution: [
-      "Built the application in React with TypeScript for type safety.",
-      "Designed a responsive, polished UI.",
-      "Deployed to production on Vercel.",
-    ],
-    architecture: [
-      "React + TypeScript single-page application.",
-      "Component-driven UI, responsive across breakpoints.",
-      "Vercel deployment.",
-    ],
-    features: [
-      "Type-safe React codebase.",
-      "Responsive, production-ready interface.",
-    ],
-    challenges: [
-      "Maintaining strong typing across the component tree.",
-    ],
-  },
-  {
     slug: "personal-finance-tracker",
     title: "Personal Finance Tracker",
     tagline: "Income, expense, and budget tracking with a clean dashboard.",
@@ -382,24 +374,24 @@ export const projectsData = [
     slug: "e-commerce",
     title: "E-commerce Website",
     tagline: "A fast, responsive e-commerce landing experience.",
-    description: "A feature-rich e-commerce landing page crafted with modern frontend technologies, providing users with a fast and responsive shopping experience.",
-    status: "Live in production",
+    description: "A fast, responsive e-commerce storefront built with Next.js 15, TypeScript, and Tailwind CSS. Reusable product components and a smooth browsing experience, deployed to production on Vercel.",
+    status: "Live · Next.js + TypeScript",
     github: "https://github.com/Feyisara2108/e-commerce",
     liveLink: "https://e-commerce-psi-kohl-81.vercel.app/",
     image: "/images/screenshot1.jpg",
-    tags: ["React", "CSS", "Frontend"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
     overview:
-      "A feature-rich e-commerce landing experience built with modern frontend tooling, focused on a fast, responsive shopping interface.",
+      "A responsive e-commerce storefront built with Next.js 15 (React 19) and TypeScript, styled with Tailwind CSS — focused on a fast, type-safe, component-driven shopping interface.",
     problem:
-      "Online storefronts live or die on speed and clarity. This build emphasizes a responsive layout and a smooth browsing experience across devices.",
+      "Online storefronts live or die on speed and clarity. This build emphasizes a type-safe component architecture and a responsive layout for a smooth browsing experience across devices.",
     contribution: [
-      "Built the storefront UI in React.",
-      "Implemented responsive layouts and product presentation.",
+      "Built the storefront UI in Next.js with TypeScript for type safety.",
+      "Implemented reusable product components and responsive Tailwind layouts.",
       "Deployed to production on Vercel.",
     ],
     architecture: [
-      "React frontend with reusable product/UI components.",
-      "Responsive CSS layout.",
+      "Next.js 15 (React 19) frontend with reusable, typed components.",
+      "Tailwind CSS for responsive styling.",
       "Vercel deployment.",
     ],
     features: [
@@ -479,18 +471,28 @@ export const getProjectBySlug = (slug) =>
 
 export const experienceData = [
   {
-    role: "Student",
+    role: "Frontend Engineer",
+    company: "Independent Projects",
+    dates: "2024 – Present",
+  },
+  {
+    role: "Technical Program Coordinator (Volunteer)",
+    company: "Web3Ladies — Technical Team",
+    dates: "2026 – Present",
+  },
+  {
+    role: "Blockchain Developer",
+    company: "Hackathons & Team Projects",
+    dates: "2025 – Present",
+  },
+  {
+    role: "Frontend Engineering Trainee",
     company: "AltSchool Africa",
-    dates: "Nov 2024 - Present",
+    dates: "2024 – 2025",
   },
   {
-    role: "Student",
+    role: "Web3 Developer Trainee",
     company: "Web3Bridge Africa",
-    dates: "Jan 2025 - April 2025",
+    dates: "2024 – 2025",
   },
-  {
-    role: "Student",
-    company: "Web3Bridge Africa",
-    dates: "Aug 2024 - Nov 2024",
-  }
 ];

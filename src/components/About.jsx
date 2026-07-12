@@ -2,11 +2,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { profileData } from '../data/projects';
 import Marquee from './Marquee';
-import { SiJavascript, SiReact, SiNextdotjs, SiTailwindcss, SiSolidity, SiHtml5, SiCss } from 'react-icons/si';
+import { SiJavascript, SiTypescript, SiReact, SiNextdotjs, SiTailwindcss, SiSolidity, SiHtml5, SiCss } from 'react-icons/si';
 import { FaHardHat, FaCube, FaLink } from 'react-icons/fa';
 
 const iconMap = {
   "JavaScript": <SiJavascript size={36} />,
+  "TypeScript": <SiTypescript size={36} />,
   "React": <SiReact size={36} />,
   "Next.js": <SiNextdotjs size={36} />,
   "Tailwind CSS": <SiTailwindcss size={36} />,

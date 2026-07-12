@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { FiDownload, FiArrowLeft } from 'react-icons/fi';
 import { profileData, resumeData, projectsData } from '../data/projects';
 
-// Selected projects to feature on the resume (web3 + flagship frontend work).
+// Selected projects to feature on the resume (web3 depth + live frontend work).
 const RESUME_PROJECT_SLUGS = [
-  'stellargive', 'scholarchain', 'diamond-contract', 'multi-sig-wallet', 'erc20-faucet', 'safe',
+  'stellargive', 'scholarchain', 'diamond-contract', 'multi-sig-wallet',
+  'personal-finance-tracker', 'e-commerce',
 ];
 
 export default function Resume() {
@@ -28,8 +29,9 @@ export default function Resume() {
           </Link>
           <div className="flex items-center gap-3">
             <a
-              href="/Mutmahinat-Arowolo-Resume.pdf"
-              download
+              href={profileData.resumeUrl || "/Mutmahinat-Arowolo-Resume.pdf"}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-[#141413] rounded-full text-sm font-semibold hover:opacity-90 transition-opacity"
             >
               <FiDownload size={16} /> Download PDF
