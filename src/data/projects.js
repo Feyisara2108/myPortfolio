@@ -1,467 +1,292 @@
-export const profileData = {
-  name: "Mutmahinat Feyisara Arowolo",
-  nickname: "Ayokomi",
-  role: "Frontend Engineer & Web3 Developer",
-  // One factual line: what I build + the stack. No clichés, no "passionate".
-  tagline: "I build responsive, accessible web apps with React, Next.js, and TypeScript — and the Web3 layer that connects them to Ethereum and Stellar smart contracts.",
-  // Résumé link used by every "Download Résumé" CTA. Paste your hosted résumé URL
-  // (Google Drive, Dropbox, etc.) here; until then it falls back to the local PDF.
-  resumeUrl: "",
-  // Roles I'm actively looking for — surfaced in the hero so recruiters see fit immediately.
-  rolesSeeking: [
-    "Frontend Engineer",
-    "React Developer",
-    "Next.js Developer",
-    "Web3 Frontend Developer",
-  ],
-  // About copy: an engineer introducing themselves. Concise, factual, early-career-honest.
-  bio: [
-    "I'm a frontend engineer focused on React, Next.js, and TypeScript, styling with Tailwind CSS. I build responsive, accessible interfaces and wire them to on-chain logic — wallet connections, contract calls, and data dashboards.",
-    "I trained in frontend engineering at AltSchool Africa and in blockchain development at Web3Bridge Africa. My work spans production React apps and tested smart contracts on Ethereum (Solidity, Foundry, Hardhat) and Stellar (Soroban, Rust). I care about clean component structure, test coverage, and shipping to production.",
-  ],
-  socials: {
-    twitter: "https://x.com/Ayokomi21",
-    github: "https://github.com/Feyisara2108",
-    linkedin: "", // TODO: add LinkedIn profile URL — top recruiter channel
-    blog: "https://hashnode.com/@ayokomi",
-    instagram: "https://instagram.com/mutmahinat_",
-    email: "ayokomi2108@gmail.com"
-  },
-  // Flat list used by the decorative marquees. Only tech demonstrated in the projects below.
-  skills: [
-    "JavaScript",
-    "TypeScript",
-    "React",
-    "Next.js",
-    "Tailwind CSS",
-    "Solidity",
-    "Foundry",
-    "Hardhat",
-    "HTML",
-    "CSS"
-  ],
-  // Categorized skills for the recruiter-facing Skills section. Every item is
-  // demonstrated in a project or the résumé — nothing aspirational.
-  skillGroups: [
-    { category: "Languages", items: ["JavaScript", "TypeScript", "Solidity", "Rust (Soroban)", "HTML", "CSS"] },
-    { category: "Frontend", items: ["React", "Next.js", "Vite", "Tailwind CSS", "Framer Motion", "React Router"] },
-    { category: "Web3", items: ["Foundry", "Hardhat", "Soroban", "ERC-20 / ERC-721", "IPFS / Pinata", "Merkle proofs"] },
-    { category: "Tooling & Deployment", items: ["Git & GitHub", "GitHub Actions", "Codecov", "Vercel"] },
-  ],
-};
-
-// Resume content rendered on /resume (screen + print). Single source of truth so the
-// page, the "Download PDF" print view, and the static PDF never drift apart.
-export const resumeData = {
-  summary:
-    "Frontend & blockchain developer specializing in scalable React/Next.js interfaces and secure smart contracts on Ethereum (Solidity, Foundry, Hardhat) and Stellar (Soroban, Rust). Comfortable across the full dApp stack: writing and testing contracts, deploying to testnets, and building the frontends that consume them. Active open-source contributor in the web3 ecosystem.",
-  competencies: [
-    { label: "Languages", value: "JavaScript, TypeScript, Solidity, Rust (Soroban), HTML5, CSS3" },
-    { label: "Frontend", value: "React, Next.js, Vite, Tailwind CSS, Framer Motion, React Router; Vue (familiar)" },
-    { label: "Blockchain", value: "Foundry, Hardhat, Soroban; contract development & testing; ERC-20 / ERC-721; EIP-2535 Diamond proxy; multi-signature wallets; Merkle-proof verification; IPFS / Pinata; testnet deployment (Sepolia, Stellar testnet)" },
-    { label: "Practices & Tooling", value: "Git & GitHub, GitHub Actions (CI/CD), Codecov, Vercel, responsive & accessible UI" },
-  ],
-  education: [
-    {
-      school: "AltSchool Africa",
-      program: "Software Engineering, Frontend Track",
-      dates: "Nov 2024 – Present",
-      detail: "Structured frontend engineering program covering modern JavaScript, React, Next.js, TypeScript, and professional software practices.",
-    },
-    {
-      school: "Web3Bridge Africa",
-      program: "Blockchain Development Cohort",
-      dates: "Jan 2025 – Apr 2025",
-      detail: "Advanced smart-contract development on Ethereum and Stellar; Solidity, Foundry, Hardhat, Soroban.",
-    },
-    {
-      school: "Web3Bridge Africa",
-      program: "Blockchain Development Cohort",
-      dates: "Aug 2024 – Nov 2024",
-      detail: "Foundations of blockchain and smart-contract engineering.",
-    },
-  ],
-  openSource: [
-    "Leading contributor to open-source web3 protocols (e.g. StellarGive on Stellar Soroban — 180+ commits, top contributor).",
-    "Participant in hackathons and collaborative team builds within the Stellar and Ethereum ecosystems.",
-    "Technical writer on Hashnode (hashnode.com/@ayokomi).",
-  ],
-};
-
 // Each project includes case-study content used on its /projects/:slug detail page.
-// Fields: slug, title, tagline, description (card), status, role, tags, github,
-// liveLink, image, overview, problem, contribution[], architecture[], features[], challenges[].
+// Fields: slug, title, tagline, description (card), status, role, featured (home grid),
+// tags, github, liveLink, image, overview, problem, contribution[], architecture[],
+// features[], challenges[].
 export const projectsData = [
+  {
+    slug: "web3ladies",
+    title: "Web3Ladies Platform",
+    tagline: "Production website and admin portal for a women-in-tech community.",
+    description: "Rebuilt and launched the Web3Ladies website and admin portal. Next.js 16, TypeScript, and Supabase (Postgres, Auth, Row Level Security, Storage), with a CMS that lets non-technical staff run every page and form.",
+    role: "Sole developer",
+    status: "Live in production",
+    featured: true,
+    github: "https://github.com/Feyisara2108/web3ladies",
+    liveLink: "https://web3ladies-eight.vercel.app",
+    image: "/images/web3ladies.jpg",
+    tags: ["Next.js", "TypeScript", "Supabase", "Tailwind CSS"],
+    highlights: [
+      "Replaced a no-code site with a Next.js app and Supabase backend the organization owns.",
+      "Admin CMS for events, cohorts, posts, partners, media, and users, with role-based access.",
+      "Postgres schema and Row Level Security written as versioned SQL migrations.",
+    ],
+    overview:
+      "Web3Ladies is a community and programs platform for women building careers in blockchain, AI, and emerging tech across Africa and the UAE. I rebuilt the organization's site, previously hosted on a no-code builder, as a Next.js application on its own Supabase project and Vercel deployment, with a full admin portal behind it.",
+    problem:
+      "The original site lived on a hosted builder: content changes depended on the tool, form submissions were hard to manage, and the organization didn't own its data. The team needed a site they control, with an admin area where staff can update events, cohorts, partners, and posts and work through applications without a developer.",
+    contribution: [
+      "Built the whole application alone (103 commits): 8 public routes, the admin portal, and the database.",
+      "Designed the Supabase schema, Row Level Security policies, and Storage buckets as versioned SQL migrations.",
+      "Built an admin CMS covering events, cohorts, blog posts, partners, testimonials, impact stats, media, and users.",
+      "Made the public application forms configurable from the admin portal, with submissions exportable to Excel.",
+      "Shipped it to production on Vercel, with the setup documented so the organization can run it independently.",
+    ],
+    architecture: [
+      "Next.js 16 App Router with React 19 and TypeScript; public pages and the admin portal as separate route groups.",
+      "Supabase for Postgres, Auth, Row Level Security, and Storage; a server-only API route handles superadmin user management.",
+      "TanStack Query for admin data loading and cache invalidation; shadcn/ui (Radix) components with Tailwind CSS.",
+      "SheetJS for Excel export of form submissions; Vercel deploys from the main branch.",
+    ],
+    features: [
+      "Public site: home, venture builder, events, community, partnerships, news, cohorts, and membership.",
+      "Role-based admin portal with superadmin-only user management.",
+      "Editable public forms and an Excel export of every submission.",
+      "Media library and founder-story/impact content editable without code.",
+    ],
+    challenges: [
+      "Keeping the rebuild faithful to the live content while moving it onto a schema the team can edit.",
+      "Writing RLS policies so the public anon key can read published content and submit forms, while only authenticated admins can write.",
+    ],
+  },
   {
     slug: "stellargive",
     title: "StellarGive",
     tagline: "Transparent on-chain crowdfunding on Stellar Soroban.",
-    description: "Transparent crowdfunding protocol on Stellar Soroban. Leading contributor (180+ commits) who built smart-contract logic and tests for a testnet-deployed donation platform with full CI/CD.",
-    role: "Lead open-source contributor",
-    status: "Open source · Stellar testnet",
+    description: "Open-source crowdfunding protocol on Stellar that I founded and maintain (official Drips maintainer): Soroban contract with 340+ Rust tests, a Next.js donor app, Playwright E2E, and 28 GitHub Actions workflows. 30 contributors.",
+    role: "Founder & maintainer",
+    status: "Live · Stellar testnet",
+    featured: true,
     github: "https://github.com/Feyisara2108/stellargive",
-    liveLink: null,
-    image: null,
-    tags: ["Soroban", "Rust", "Stellar", "Open Source"],
+    liveLink: "https://stellargive.vercel.app",
+    image: "/images/stellargive.jpg",
+    tags: ["Soroban", "Rust", "Next.js", "TypeScript"],
+    highlights: [
+      "Founder and maintainer; official Drips open-source maintainer with about 30 contributors.",
+      "Soroban contract for campaigns, donations, claims, and refunds, covered by 340+ Rust tests.",
+      "28 GitHub Actions workflows, including CodeQL, Playwright E2E, and contract deploy/rollback.",
+    ],
     overview:
-      "StellarGive is an open-source crowdfunding protocol built on the Stellar network using Soroban smart contracts (written in Rust). Donations and campaign state live entirely on-chain, so every contribution is publicly verifiable rather than trusted to a central platform.",
+      "StellarGive is an open-source crowdfunding protocol on the Stellar network. Campaigns, donations, claims, and refunds are handled by a Soroban smart contract, so every contribution can be checked on a public ledger instead of trusted to a platform. A Next.js app lets donors connect a Freighter wallet and give.",
     problem:
-      "Traditional crowdfunding relies on a trusted intermediary that holds the funds and reports where they went. Donors have no cryptographic guarantee that money reaches the campaign, and platforms can freeze or skim balances. StellarGive removes that trust assumption by settling everything on a public ledger.",
+      "Traditional crowdfunding relies on an intermediary that holds the funds and reports where they went. Donors can't verify that their money reached the campaign, and platforms can freeze or skim balances. StellarGive settles everything on-chain, and refunds are enforced by the contract.",
     contribution: [
-      "Top contributor to the protocol with 180+ commits as an open-source collaborator.",
-      "Implemented and refined Soroban smart-contract logic for campaign and donation flows.",
-      "Wrote contract tests to validate behaviour and guard against regressions.",
-      "Worked within a CI/CD pipeline (GitHub Actions) with Codecov coverage reporting.",
+      "Founded the project and maintain it: roadmap, issues, reviews, and merges for about 30 contributors. Recognized as an official Drips open-source maintainer.",
+      "Built and hardened the Soroban contract for campaign creation, donations, claims, and refunds, backed by 340+ Rust unit tests.",
+      "Set up the CI/CD: 28 GitHub Actions workflows covering contract tests, lint, CodeQL, gitleaks, Lighthouse, visual regression, nightly E2E, and contract deploy and rollback.",
+      "Fixed CI blockers and the frontend deploy pipeline, and configured Dependabot to keep major upgrades in separate PRs.",
     ],
     architecture: [
-      "Soroban smart contracts (Rust) deployed to the Stellar testnet.",
-      "On-chain campaign and contribution state for full transparency.",
-      "GitHub Actions CI running the test suite on every push, with Codecov reporting.",
+      "Soroban smart contract (Rust) deployed to the Stellar testnet.",
+      "Next.js frontend using the Stellar SDK and Freighter wallet, React Hook Form + Zod, TanStack Query, and Sentry.",
+      "Playwright E2E specs for create, donate, claim, refund, explore, keyboard navigation, and mobile layouts.",
+      "Docker images for local and production runs; Codecov coverage and an OpenSSF Scorecard on the repo.",
     ],
     features: [
-      "Create transparent fundraising campaigns on-chain.",
-      "Publicly verifiable donations recorded on the Stellar ledger.",
-      "Tested contract logic backed by continuous integration.",
+      "Create campaigns and donate in XLM with a browser wallet.",
+      "Contract-enforced claims for campaign owners and refunds for donors.",
+      "Every donation is publicly verifiable on the Stellar ledger.",
     ],
     challenges: [
-      "Working in Rust/Soroban's resource-metered environment, where contract storage and execution cost must be kept lean.",
-      "Collaborating in an open-source codebase, matching existing conventions and keeping tests green across contributors.",
+      "Keeping storage and execution lean in Soroban's resource-metered environment.",
+      "Keeping CI green and conventions consistent across a large, rotating group of open-source contributors.",
+    ],
+  },
+  {
+    slug: "mev-auction-hook",
+    title: "LP-Governed MEV Auction Hook",
+    tagline: "A Uniswap v4 hook that auctions execution rights and returns MEV to LPs.",
+    description: "Uniswap v4 hook that turns large swaps into on-chain auctions for execution rights, splitting searcher bids between LPs and traders under LP governance. 49 Foundry tests, deployed on Unichain Sepolia, with a Next.js + wagmi UI.",
+    role: "Hookathon project (Atrium UHI10)",
+    status: "Live · Unichain Sepolia",
+    featured: true,
+    github: "https://github.com/Feyisara2108/mev-auction-hook",
+    liveLink: "https://mev-auction-hook.vercel.app",
+    image: "/images/mev-auction-hook.jpg",
+    tags: ["Solidity", "Foundry", "Uniswap v4", "Next.js"],
+    highlights: [
+      "On-chain auction for large swaps, with no oracle, relayer, or keeper.",
+      "LP-weighted governance over how winning bids split between LPs and traders.",
+      "49 Foundry tests; deployed and verified on Unichain Sepolia.",
+    ],
+    overview:
+      "A Uniswap v4 hook that turns every large swap into a short on-chain auction for execution rights. The winning bid is split between a donation to in-range liquidity providers and a rebate to the trader, and the LPs of each pool vote on that split, weighted by their liquidity. Built for the Atrium Academy UHI10 Hookathon.",
+    problem:
+      "Arbitrageurs and MEV bots trade against stale prices and take that value out of the pool, and LPs absorb it as impermanent loss. Swap fees don't cover those losses in most major pools. This hook creates a market for execution rights, so value that would have been extracted stays in the pool under rules the LPs set.",
+    contribution: [
+      "Designed and wrote the GovernedMevAuctionHook contract: intent submission, timed bidding, and execution inside poolManager.unlock().",
+      "Wrote 49 Foundry tests, including a dedicated edge-case suite.",
+      "Added LP attestation signatures verified with OpenZeppelin SignatureChecker (EOA and ERC-1271) and bound to chain, hook, pool, and LP.",
+      "Deployed and verified the contract on Unichain Sepolia, and built the Next.js + wagmi/viem governance and swap UI.",
+    ],
+    architecture: [
+      "requestSwap → submitBid → executeSwap lifecycle; small swaps take an express lane with no auction or delay.",
+      "Pull-payment refunds (pendingRefunds) instead of push refunds, which removes the revert-griefing vector.",
+      "Winning bid split with poolManager.donate() to in-range LPs, with the remainder rebated to the trader.",
+      "No oracle, relayer, or keeper: every decision comes from on-chain inputs.",
+    ],
+    features: [
+      "On-chain MEV auction for large swaps.",
+      "LP-weighted governance over the LP/trader revenue split.",
+      "Express lane so small swaps execute immediately at no extra cost.",
+    ],
+    challenges: [
+      "Making the auction resistant to griefing without any off-chain coordinator.",
+      "Binding signed attestations tightly enough that they can't be replayed on another chain, hook, or pool.",
+    ],
+  },
+  {
+    slug: "blockwork",
+    title: "Blockwork",
+    tagline: "Trustless bounty board on Stacks with STX locked in escrow.",
+    description: "Bounty marketplace where the STX reward is locked in a Clarity contract until the poster approves the work, with timeouts so funds can't get stuck. Next.js + Stacks.js frontend, 16 contract tests, live on Stacks testnet.",
+    role: "Solo build (Scaffold Stacks challenge)",
+    status: "Live · Stacks testnet",
+    github: "https://github.com/Feyisara2108/blockwork",
+    liveLink: "https://blockwork-sooty.vercel.app",
+    image: "/images/blockwork.jpg",
+    tags: ["Clarity", "Stacks", "Next.js", "TypeScript"],
+    overview:
+      "Blockwork lets anyone post a task with an STX reward locked in a Clarity smart contract. A worker claims it and submits a link to the work, and the poster approves it to release payment. If either side goes quiet, a timeout lets the other recover the funds. Built for the Scaffold Stacks 20 Builders Challenge.",
+    problem:
+      "Freelance bounties depend on trust: the poster may never pay, or the worker may never deliver. Escrow platforms solve this by holding the money themselves. Blockwork puts the escrow in a contract with explicit timeouts, so neither party can get funds stuck.",
+    contribution: [
+      "Wrote the bounty-board Clarity contract and its full lifecycle: post, claim, submit, approve, cancel, abandon, reopen, and timeout payout.",
+      "Wrote 16 Vitest tests against the contract with Clarinet.",
+      "Built the Next.js frontend: marketplace, bounty pages, builder profiles, leaderboard, and posting flow.",
+      "Deployed the contract to Stacks testnet and the app to Vercel.",
+    ],
+    architecture: [
+      "Clarity contract holding STX in escrow, with deadlines counted in Bitcoin blocks.",
+      "Next.js frontend using @stacks/connect and @stacks/transactions, with Jotai for state.",
+      "Reputation and earnings computed only from on-chain contract history.",
+    ],
+    features: [
+      "Marketplace with live escrow stats, category filters, search, and sorting.",
+      "Lifecycle stepper and on-chain activity timeline that link every step to its transaction.",
+      "Builder profiles, a leaderboard, and a live Bitcoin block ticker.",
+    ],
+    challenges: [
+      "Designing timeouts for every state so funds can always be recovered.",
+      "Presenting deadlines measured in Bitcoin blocks in a way users can follow.",
+    ],
+  },
+  {
+    slug: "fairmark",
+    title: "FairMark",
+    tagline: "Surfaces mispricing in tokenized pre-IPO stocks.",
+    description: "Data product that compares tokenized pre-IPO stocks (SpaceX, OpenAI…) against fair value across two issuers, verifies every token on Solana, and links out to trade. React + TypeScript with serverless API routes.",
+    status: "Live",
+    github: "https://github.com/Feyisara2108/fairmark",
+    liveLink: "https://fairmark-sepia.vercel.app",
+    image: "/images/fairmark.jpg",
+    tags: ["React", "TypeScript", "Solana", "Vite"],
+    overview:
+      "Platforms like PreStocks and Tessera issue tokens that track private companies' valuations. FairMark pulls their public APIs, calculates each token's deviation from fair value, totals the mispricing across all live tokens, and shows the same company priced by two issuers side by side.",
+    problem:
+      "Buyers of tokenized pre-IPO stocks can't easily see whether a token trades at a premium or a discount to fair value, or that two issuers price the same company very differently. Nothing showed either gap before a buyer traded.",
+    contribution: [
+      "Built the app alone (40 commits): data layer, serverless API routes, and UI.",
+      "Wrote API adapters for PreStocks, Tessera, and Pyth price feeds.",
+      "Added on-chain verification that reads each token's SPL mint supply from Solana RPC and degrades gracefully if the RPC is unavailable.",
+      "Built a cross-issuer comparison view, blended baskets, sparklines, and deviation badges.",
+    ],
+    architecture: [
+      "React + TypeScript single-page app built with Vite.",
+      "Serverless API routes that fetch and normalize issuer and price data.",
+      "Solana RPC reads to verify each listing is a real on-chain asset.",
+    ],
+    features: [
+      "Live dollar total of mispricing across every token.",
+      "Side-by-side cross-issuer comparison.",
+      "\"Verified on-chain\" badge per token, with one-click links out to Jupiter to trade.",
+    ],
+    challenges: [
+      "Normalizing two issuers with different legal structures and API shapes into one model.",
+      "Keeping the UI responsive when on-chain verification is slow or fails.",
+    ],
+  },
+  {
+    slug: "safesale",
+    title: "SafeSale",
+    tagline: "Zero-custody escrow for social-commerce sellers in Nigeria.",
+    description: "Hack4Freedom first-runner-up escrow app for Instagram and WhatsApp sellers: funds are locked in Cashu ecash tied to the buyer's Nostr key, so no platform ever holds them. Built the React + TypeScript frontend (14 merged PRs).",
+    role: "Frontend developer, hackathon team",
+    status: "Hack4Freedom · 1st Runner-Up",
+    featured: true,
+    github: "https://github.com/JSE19/safe-sales",
+    liveLink: "https://safe-kappa-umber.vercel.app",
+    image: "/images/safesale.jpg",
+    tags: ["React", "TypeScript", "Nostr", "Cashu"],
+    highlights: [
+      "First Runner-Up at the Hack4Freedom hackathon.",
+      "Built the frontend across 14 merged PRs: onboarding, seller dashboard, listings, and checkout.",
+      "Buyer funds stay in ecash only the buyer's key can release; the platform never holds them.",
+    ],
+    overview:
+      "SafeSale is a decentralized escrow layer for micro-sellers who trade through Instagram, WhatsApp, TikTok, X, and Telegram. Payment is locked into a Cashu ecash token that only the buyer's key can release, and seller identity and reputation live on Nostr.",
+    problem:
+      "Social-commerce in Nigeria runs on trust between strangers: buyers fear paying and never receiving the item, and sellers fear shipping and never being paid. Centralized escrow charges high fees, can freeze funds, and requires KYC that excludes informal merchants.",
+    contribution: [
+      "Built the frontend across 14 merged pull requests: onboarding, seller dashboard, storefront, and checkout.",
+      "Integrated the Cashu library and aligned the frontend with the team's working MavaPay payment flow.",
+      "Rewrote the project README and documentation for the submission.",
+    ],
+    architecture: [
+      "React + TypeScript (Vite) with TanStack Query, React Hook Form, and Zod.",
+      "Cashu ecash tokens P2PK-locked (NUT-11) to a one-time Nostr key generated in the buyer's browser.",
+      "Seller listings published as Nostr kind 30018 events.",
+    ],
+    features: [
+      "Shareable checkout link that works in any chat app.",
+      "Buyer-controlled fund release; the platform never takes custody.",
+      "Portable seller reputation that doesn't depend on any platform.",
+    ],
+    challenges: [
+      "Making key generation and ecash locking invisible to non-crypto users.",
+      "Keeping the frontend in sync with a backend and payment flow that changed during the hackathon.",
     ],
   },
   {
     slug: "scholarchain",
     title: "ScholarChain",
-    tagline: "On-chain grant funding with Soul-Bound proof-of-grant.",
-    description: "A decentralized grant protocol that distributes funding on-chain and issues Soul-Bound Tokens as immutable 'proof of grant'. Solidity + Foundry (100% coverage), React, IPFS via Pinata, quorum voting on Sepolia.",
-    role: "Team project",
+    tagline: "On-chain grant funding with Soul-Bound proof of grant.",
+    description: "Decentralized grant protocol: multi-donor pools, quorum voting, automatic payout, and Soul-Bound Tokens as permanent proof of grant. Solidity + Foundry (197 tests, 100% coverage), React, IPFS, on Sepolia; led the five-developer team.",
+    role: "Team lead, five-developer capstone",
     status: "Team project · Ethereum Sepolia",
     github: "https://github.com/Feyisara2108/scholarChain",
     liveLink: null,
     image: null,
     tags: ["Solidity", "Foundry", "React", "IPFS"],
     overview:
-      "ScholarChain is a decentralized grant protocol that distributes funding entirely on-chain. Approved recipients receive a Soul-Bound Token (SBT), a non-transferable NFT that acts as immutable, verifiable 'proof of grant'. Built as a team project on Ethereum (Sepolia).",
+      "ScholarChain is a fully on-chain grant distribution protocol on Ethereum Sepolia. Anyone can create a grant pool, donors fund it in USDT, applicants submit proposals stored on IPFS, and designated signers vote on-chain. Winners are paid automatically and receive a non-transferable Soul-Bound Token as permanent proof of the grant.",
     problem:
-      "Grant and scholarship distribution is opaque: applicants can't see how decisions are made, and 'proof' that someone received a grant is easily forged or lost. ScholarChain makes approvals transparent and the resulting credential permanent and tamper-proof.",
+      "Grant distribution is opaque: applicants can't see how decisions are made, payouts are slowed by banks, and proof that someone received a grant is easy to forge or lose. ScholarChain makes approvals transparent and the resulting credential permanent.",
     contribution: [
-      "Contributed 42 commits (2nd of 6 contributors) to the on-chain grant-distribution logic in Solidity.",
-      "Helped implement Soul-Bound Token issuance as non-transferable proof of grant.",
-      "Worked on the Foundry test suite that reached 100% coverage.",
-      "Integrated proposal metadata storage on IPFS via Pinata.",
+      "Led a five-developer team: set the project direction, broke requirements into tasks, and assigned work.",
+      "Reviewed and merged pull requests and coordinated the frontend-to-contract integration.",
+      "Implemented the grant pool in Solidity and contributed to debugging across the stack.",
+      "Worked on the Foundry suite of 197 tests at 100% coverage.",
+      "Fixed the review page's data loading (Promise.all) and frontend build failures.",
     ],
     architecture: [
-      "Solidity contracts for grant proposals, quorum voting, and fund release on Sepolia.",
-      "Soul-Bound (non-transferable) ERC-721-style tokens minted to approved recipients.",
-      "Proposal metadata pinned to IPFS through Pinata, referenced on-chain by hash.",
-      "React frontend for browsing proposals and interacting with the protocol.",
-      "Foundry for testing and deployment (100% coverage).",
+      "Solidity contracts for grant pools, quorum voting, and fund release on Sepolia.",
+      "Soul-Bound Tokens with fully on-chain metadata.",
+      "Proposal metadata and PDFs pinned to IPFS through Pinata.",
+      "React 19 + Vite frontend.",
     ],
     features: [
-      "Transparent quorum voting by designated signers.",
-      "Immutable, non-transferable proof-of-grant credentials (SBTs).",
-      "Decentralized, on-chain fund distribution.",
-      "Off-chain metadata stored on IPFS for cost efficiency.",
+      "Permissionless grant pools with multi-donor USDT funding.",
+      "Transparent quorum voting and automatic payout.",
+      "Non-transferable proof-of-grant credentials.",
     ],
     challenges: [
-      "Designing tokens to be permanently non-transferable while still standards-friendly.",
-      "Coordinating contract, tests, and frontend across a team and reaching full test coverage.",
-    ],
-  },
-  {
-    slug: "diamond-contract",
-    title: "Diamond Contract (EIP-2535)",
-    tagline: "Upgradeable NFT-collateralized lending via the Diamond proxy standard.",
-    description: "An upgradeable NFT-collateralized lending protocol built with the Diamond proxy standard. Multiple facets (ERC-20, ERC-721, borrowing) deployed to the Sepolia testnet via Foundry.",
-    status: "Ethereum Sepolia",
-    github: "https://github.com/Feyisara2108/Diamond-Contract",
-    liveLink: null,
-    image: null,
-    tags: ["Solidity", "Foundry", "Hardhat", "EIP-2535"],
-    overview:
-      "An upgradeable, NFT-collateralized lending protocol built on the EIP-2535 'Diamond' proxy standard. The system is split into independent facets (ERC-20, ERC-721, and borrowing) that share a single storage layout, allowing logic to be upgraded without redeploying or migrating state.",
-    problem:
-      "A monolithic contract hits the 24KB size limit and can't be upgraded without redeploying and migrating everything. The Diamond standard solves both: it routes calls to small, swappable facets behind one address, so the protocol can grow and be patched in place.",
-    contribution: [
-      "Implemented the Diamond (EIP-2535) proxy with a diamondCut for adding/replacing facets.",
-      "Built separate ERC-20, ERC-721, and borrowing facets over shared diamond storage.",
-      "Wrote deployment and verification scripts and deployed to Sepolia via Foundry.",
-    ],
-    architecture: [
-      "EIP-2535 Diamond proxy routing function calls to registered facets.",
-      "Facets: ERC-20 (loan/collateral token), ERC-721 (NFT collateral), and borrowing logic.",
-      "Shared 'diamond storage' pattern to avoid storage-collision across facets.",
-      "Foundry (and Hardhat) for compilation, testing, and Sepolia deployment.",
-    ],
-    features: [
-      "Modular, upgradeable contract logic with no full redeploy.",
-      "NFT-collateralized borrowing flow.",
-      "Clean separation of token and lending concerns into facets.",
-    ],
-    challenges: [
-      "Avoiding storage-slot collisions between facets, the core hazard of the Diamond pattern.",
-      "Keeping the diamondCut upgrade path safe so logic can change without corrupting state.",
-    ],
-  },
-  {
-    slug: "multi-sig-wallet",
-    title: "Multi-Signature Wallet",
-    tagline: "A wallet that requires multiple approvals before any transaction executes.",
-    description: "A secure multi-signature wallet smart contract requiring multiple approvals before a transaction executes. Written in Solidity with a full Hardhat test suite.",
-    status: "Solidity · Hardhat",
-    github: "https://github.com/Feyisara2108/multiSigContract",
-    liveLink: null,
-    image: null,
-    tags: ["Solidity", "Hardhat", "TypeScript"],
-    overview:
-      "A multi-signature wallet smart contract: funds can only move when a required number of designated owners approve the same transaction. It's the pattern teams and DAOs use to remove single-key risk from a treasury.",
-    problem:
-      "A single private key is a single point of failure: lose it or leak it and the funds are gone. A multisig requires M-of-N owners to agree, so no one person (or one compromised key) can drain the wallet.",
-    contribution: [
-      "Designed the propose → approve → execute transaction lifecycle in Solidity.",
-      "Enforced the M-of-N approval threshold and owner-only access control.",
-      "Wrote a full Hardhat/TypeScript test suite covering the approval and execution flows.",
-    ],
-    architecture: [
-      "Owner set and configurable confirmation threshold stored on-chain.",
-      "Transactions submitted, confirmed by owners, then executed once the threshold is met.",
-      "Hardhat + TypeScript for testing and deployment.",
-    ],
-    features: [
-      "Configurable M-of-N approval requirement.",
-      "Submit, confirm, revoke, and execute transaction flow.",
-      "Guards against execution before the threshold is reached.",
-    ],
-    challenges: [
-      "Preventing double-execution and replay of already-executed transactions.",
-      "Validating owner permissions and confirmation counts on every state change.",
-    ],
-  },
-  {
-    slug: "erc20-faucet",
-    title: "ERC-20 Token Faucet",
-    tagline: "A testnet faucet: ERC-20 + faucet contracts, deploy scripts, and Hardhat tests.",
-    description: "A testnet faucet that dispenses ERC-20 tokens to developers — the ERC-20 token and faucet contracts, deployment scripts, and a Hardhat test suite, plus a React frontend scaffold for the claim flow.",
-    status: "Solidity · Hardhat · testnet",
-    github: "https://github.com/Feyisara2108/faucet_dApp",
-    liveLink: null,
-    image: null,
-    tags: ["Solidity", "Hardhat", "React"],
-    overview:
-      "A testnet faucet built around an ERC-20 token and a faucet contract that dispenses it. The focus is the on-chain logic — token, faucet contract, deployment scripts, and tests — with a React frontend scaffold for the wallet-connect and claim flow.",
-    problem:
-      "Developers building on a testnet constantly need test tokens. A faucet automates that distribution; this project covers the contract side end to end — token, faucet logic, deployment scripts, and a Hardhat test suite.",
-    contribution: [
-      "Wrote the ERC-20 token and faucet contracts in Solidity.",
-      "Authored deployment scripts and a Hardhat test suite.",
-      "Scaffolded a React frontend for the wallet-connect and claim flow.",
-    ],
-    architecture: [
-      "ERC-20 token contract + faucet contract managing dispense logic.",
-      "Hardhat for compilation, testing, and deployment.",
-      "React frontend scaffold for interacting with the contracts via a wallet provider.",
-    ],
-    features: [
-      "Reusable ERC-20 + faucet contract pair.",
-      "Configurable claim limits so the faucet isn't trivially drained.",
-      "Dispense logic covered by a Hardhat test suite.",
-    ],
-    challenges: [
-      "Designing sensible claim limits so the faucet isn't trivially drained.",
-      "Structuring the token and faucet contract pair for clean testnet deployment.",
-    ],
-  },
-  {
-    slug: "nft-minting",
-    title: "NFT Minting Contract",
-    tagline: "An ERC-721 collection with art and metadata pinned to IPFS.",
-    description: "An ERC-721 NFT collection with metadata and artwork pinned to IPFS. Deployed and minted on a testnet.",
-    status: "ERC-721 · IPFS · testnet",
-    github: "https://github.com/Feyisara2108/nft",
-    liveLink: null,
-    // Token metadata reference (raw IPFS JSON, shown as a link inside the case study
-    // rather than as a "live demo" so visitors don't land on a blank JSON page).
-    metadataUrl: "https://aquamarine-efficient-meerkat-10.mypinata.cloud/ipfs/bafkreib54jied4qc2etb3j6oadqradd3skxjs5skme43uv6snqagz4khbu",
-    image: null,
-    tags: ["Solidity", "ERC-721", "IPFS"],
-    overview:
-      "An ERC-721 NFT collection deployed and minted on a testnet, with artwork and token metadata pinned to IPFS so the assets stay decentralized and content-addressed rather than hosted on a single server.",
-    problem:
-      "Many NFTs point their metadata at a centralized URL that can change or disappear, breaking the token. Pinning art and metadata to IPFS makes each token's content immutable and verifiable by hash.",
-    contribution: [
-      "Implemented the ERC-721 contract with mint logic and token URIs.",
-      "Pinned artwork and metadata JSON to IPFS via Pinata.",
-      "Deployed and minted on a testnet.",
-    ],
-    architecture: [
-      "ERC-721 contract storing per-token metadata URIs.",
-      "Artwork + metadata pinned to IPFS (content-addressed).",
-      "Testnet deployment and minting.",
-    ],
-    features: [
-      "Standards-compliant ERC-721 minting.",
-      "Decentralized, content-addressed metadata on IPFS.",
-    ],
-    challenges: [
-      "Structuring token metadata correctly so it resolves in wallets and marketplaces.",
-      "Managing the IPFS pinning workflow for reliable availability.",
-    ],
-  },
-  {
-    slug: "merkle-airdrop",
-    title: "Merkle Airdrop Verifier",
-    tagline: "Gas-efficient whitelist verification using Merkle proofs.",
-    description: "A gas-efficient airdrop/whitelist verifier using Merkle proofs to validate eligible addresses without storing the full list on-chain.",
-    status: "Merkle proofs · Web3",
-    github: "https://github.com/Feyisara2108/merkleTree",
-    liveLink: null,
-    image: null,
-    tags: ["JavaScript", "Merkle Tree", "Web3"],
-    overview:
-      "A Merkle-tree-based verifier for airdrops and whitelists. Instead of storing thousands of eligible addresses on-chain, only a single 32-byte Merkle root is stored; each user proves eligibility by submitting a Merkle proof.",
-    problem:
-      "Storing a large allowlist on-chain is prohibitively expensive: every address costs gas. A Merkle tree compresses the entire list into one root hash, so eligibility checks stay cheap no matter how big the list is.",
-    contribution: [
-      "Built the Merkle tree generation and proof tooling in JavaScript.",
-      "Implemented on-chain proof verification against the stored root.",
-    ],
-    architecture: [
-      "Off-chain script builds the Merkle tree from the eligible-address list.",
-      "Only the Merkle root is stored on-chain.",
-      "Users submit a proof; the contract verifies it against the root before allowing a claim.",
-    ],
-    features: [
-      "Constant on-chain storage cost regardless of list size.",
-      "Cryptographically verifiable eligibility.",
-    ],
-    challenges: [
-      "Generating proofs that exactly match the on-chain hashing scheme (ordering, encoding).",
-      "Preventing double-claims after a valid proof is used.",
-    ],
-  },
-  {
-    slug: "personal-finance-tracker",
-    title: "Personal Finance Tracker",
-    tagline: "Income, expense, and budget tracking with a clean dashboard.",
-    description: "A finance tracking application to manage income, expenses, and budgets, with a clean dashboard interface. Live in production.",
-    status: "Live in production",
-    github: "https://github.com/Feyisara2108/personal-finance-tracker",
-    liveLink: "https://personal-finance-tracker-azure-alpha.vercel.app",
-    image: "/images/finance-tracker.png",
-    tags: ["JavaScript", "React", "Frontend"],
-    overview:
-      "A finance-tracking application for managing income, expenses, and budgets, surfaced through a clean dashboard. Live in production on Vercel.",
-    problem:
-      "People lose track of where their money goes. This app centralizes income, spending, and budgets into one dashboard so balances and trends are visible at a glance.",
-    contribution: [
-      "Built the dashboard UI and state management in React.",
-      "Implemented income/expense/budget tracking logic.",
-      "Deployed to production on Vercel.",
-    ],
-    architecture: [
-      "React single-page application with a dashboard layout.",
-      "Client-side state for transactions and budgets.",
-      "Vercel deployment.",
-    ],
-    features: [
-      "Track income, expenses, and budgets in one place.",
-      "Clean, readable dashboard.",
-    ],
-    challenges: [
-      "Presenting financial data clearly and keeping totals consistent as entries change.",
-    ],
-  },
-  {
-    slug: "e-commerce",
-    title: "E-commerce Website",
-    tagline: "A fast, responsive e-commerce landing experience.",
-    description: "A fast, responsive e-commerce storefront built with Next.js 15, TypeScript, and Tailwind CSS. Reusable product components and a smooth browsing experience, deployed to production on Vercel.",
-    status: "Live · Next.js + TypeScript",
-    github: "https://github.com/Feyisara2108/e-commerce",
-    liveLink: "https://e-commerce-psi-kohl-81.vercel.app/",
-    image: "/images/ecommerce.png",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS"],
-    overview:
-      "A responsive e-commerce storefront built with Next.js 15 (React 19) and TypeScript, styled with Tailwind CSS — focused on a fast, type-safe, component-driven shopping interface.",
-    problem:
-      "Online storefronts live or die on speed and clarity. This build emphasizes a type-safe component architecture and a responsive layout for a smooth browsing experience across devices.",
-    contribution: [
-      "Built the storefront UI in Next.js with TypeScript for type safety.",
-      "Implemented reusable product components and responsive Tailwind layouts.",
-      "Deployed to production on Vercel.",
-    ],
-    architecture: [
-      "Next.js 15 (React 19) frontend with reusable, typed components.",
-      "Tailwind CSS for responsive styling.",
-      "Vercel deployment.",
-    ],
-    features: [
-      "Responsive product browsing.",
-      "Modern, fast landing experience.",
-    ],
-    challenges: [
-      "Keeping the layout clean and performant across screen sizes.",
-    ],
-  },
-  {
-    slug: "space-tourism",
-    title: "Space Tourism",
-    tagline: "An immersive multi-page space-tourism front-end.",
-    description: "An engaging front-end application focused on space tourism, featuring innovative navigation and an out-of-this-world UX.",
-    status: "Live in production",
-    github: "https://github.com/Feyisara2108/space-tourism",
-    liveLink: "https://space-tourism-lake-two.vercel.app/",
-    image: "/images/space-tourism.png",
-    tags: ["HTML", "CSS", "JavaScript"],
-    overview:
-      "A multi-page space-tourism front-end with immersive visuals and custom navigation, a UI/UX-focused build emphasizing layout, typography, and interaction.",
-    problem:
-      "A classic front-end challenge in translating a rich multi-page design into a faithful, responsive, accessible implementation.",
-    contribution: [
-      "Implemented the multi-page layout and navigation in HTML/CSS/JavaScript.",
-      "Matched the design system across breakpoints.",
-      "Deployed to production.",
-    ],
-    architecture: [
-      "Vanilla HTML/CSS/JavaScript multi-page site.",
-      "Custom navigation and responsive layouts.",
-    ],
-    features: [
-      "Immersive, design-faithful interface.",
-      "Responsive across devices.",
-    ],
-    challenges: [
-      "Reproducing a detailed design precisely without a framework.",
+      "Making tokens permanently non-transferable while staying standards-friendly.",
+      "Coordinating contracts, tests, and frontend across a five-person team in two weeks.",
     ],
   },
 ];
+
+export const featuredProjects = projectsData.filter((p) => p.featured);
 
 export const getProjectBySlug = (slug) =>
   projectsData.find((p) => p.slug === slug);
-
-export const experienceData = [
-  {
-    role: "Frontend Engineer",
-    company: "Independent Projects",
-    dates: "2024 – Present",
-  },
-  {
-    role: "Technical Program Coordinator (Volunteer)",
-    company: "Web3Ladies — Technical Team",
-    dates: "2026 – Present",
-  },
-  {
-    role: "Blockchain Developer",
-    company: "Hackathons & Team Projects",
-    dates: "2025 – Present",
-  },
-  {
-    role: "Frontend Engineering Trainee",
-    company: "AltSchool Africa",
-    dates: "2024 – 2025",
-  },
-  {
-    role: "Web3 Developer Trainee",
-    company: "Web3Bridge Africa",
-    dates: "2024 – 2025",
-  },
-];

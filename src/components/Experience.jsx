@@ -1,51 +1,29 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { experienceData } from '../data/projects';
+import { experienceData } from '../data/experience';
+import Section from './Section';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-10 px-6 md:px-12 max-w-4xl mx-auto w-full">
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
-        transition={{ duration: 0.6 }}
-        className="space-y-8 overflow-x-hidden"
-      >
-        <h2 className="text-3xl md:text-4xl font-display font-bold text-center md:text-left text-textPrimary">
-          Work Experience
-        </h2>
-        
-        <div className="space-y-4">
-          {experienceData.map((item, index) => (
-            <motion.div 
-              key={index}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="flex flex-col md:flex-row md:items-center justify-between py-4 px-4 rounded-2xl hover:bg-black/5 dark:hover:bg-white/5 transition-all group"
-            >
-              {/* Date */}
-              <div className="text-textMuted text-[14px] font-medium mb-1 md:mb-0 w-32">
-                {item.dates}
-              </div>
-              
-              {/* Role & Company */}
-              <div className="flex flex-col md:flex-row md:items-center gap-2 md:gap-3 flex-grow text-left md:text-right justify-end">
-                <span className="text-lg md:text-xl font-semibold text-textPrimary group-hover:text-accent transition-colors">
-                  {item.role}
-                </span>
-                <span className="hidden md:inline text-textMuted">at</span>
-                <div className="flex items-center gap-2 border border-black/10 dark:border-white/10 px-4 py-1.5 rounded-full bg-black/5 dark:bg-white/5 text-sm md:text-base text-accent font-medium w-fit">
-                  <span className="w-1.5 h-1.5 rounded-full bg-accent"></span>
-                  {item.company}
-                </div>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </motion.div>
-    </section>
+    <Section id="experience" title="Experience">
+      <ol className="space-y-10">
+        {experienceData.filter((job) => !job.resumeOnly).map((job) => (
+          <li key={`${job.company}-${job.role}`} className="grid md:grid-cols-[11rem_1fr] gap-2 md:gap-8">
+            <p className="font-mono text-xs md:text-sm text-textMuted md:pt-1">{job.dates}</p>
+            <div>
+              <h3 className="font-semibold text-lg leading-snug">
+                {job.role} <span className="text-textMuted font-normal">· {job.company}</span>
+              </h3>
+              <ul className="mt-3 space-y-2">
+                {job.highlights.map((h) => (
+                  <li key={h} className="flex gap-3 text-textMuted leading-relaxed">
+                    <span className="mt-2.5 h-1 w-1 shrink-0 rounded-full bg-accent" aria-hidden="true" />
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 }

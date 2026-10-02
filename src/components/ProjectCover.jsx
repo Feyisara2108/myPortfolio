@@ -1,29 +1,27 @@
 import React from 'react';
 import {
-  SiSolidity, SiReact, SiJavascript, SiTypescript, SiRust, SiHtml5, SiCss, SiIpfs, SiStellar, SiEthereum,
+  SiSolidity, SiReact, SiJavascript, SiTypescript, SiRust, SiIpfs, SiStellar, SiEthereum,
+  SiNextdotjs, SiSupabase, SiSolana,
 } from 'react-icons/si';
-import { FaCube, FaHardHat, FaShieldAlt, FaCode } from 'react-icons/fa';
+import { FaCube, FaHardHat, FaCode } from 'react-icons/fa';
 
 // Pick a representative glyph for a project from its tags, so contract/backend
 // projects with no screenshot still get a recognizable, branded cover.
 const TAG_ICON = {
   Solidity: SiSolidity,
-  React: SiReact,
-  JavaScript: SiJavascript,
-  TypeScript: SiTypescript,
-  Rust: SiRust,
   Soroban: SiStellar,
   Stellar: SiStellar,
   Ethereum: SiEthereum,
-  HTML: SiHtml5,
-  CSS: SiCss,
+  Solana: SiSolana,
+  Supabase: SiSupabase,
+  'Next.js': SiNextdotjs,
+  React: SiReact,
+  TypeScript: SiTypescript,
+  JavaScript: SiJavascript,
+  Rust: SiRust,
   IPFS: SiIpfs,
   Foundry: FaCube,
   Hardhat: FaHardHat,
-  'EIP-2535': FaCube,
-  'Merkle Tree': FaShieldAlt,
-  'ERC-721': FaCube,
-  'Open Source': FaCode,
 };
 
 function glyphFor(tags = []) {
@@ -56,7 +54,7 @@ export default function ProjectCover({ project, className = '' }) {
     <div className="w-full h-full relative flex flex-col items-center justify-center bg-bg p-6 text-center overflow-hidden">
       {React.createElement(glyph, { className: 'absolute -right-6 -bottom-6 text-textMuted/10', size: 150, 'aria-hidden': 'true' })}
       {React.createElement(glyph, { className: 'text-accent mb-3', size: 32, 'aria-hidden': 'true' })}
-      <span className="text-lg md:text-xl font-display font-bold text-textPrimary leading-tight relative z-10">
+      <span className="text-lg md:text-xl font-semibold text-textPrimary leading-tight relative z-10">
         {project.title}
       </span>
       {project.tags && (
