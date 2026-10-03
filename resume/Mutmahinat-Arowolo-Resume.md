@@ -4,7 +4,7 @@
 Lagos, Nigeria | ayokomi2108@gmail.com | my-portfolio-eight-iota-82.vercel.app | github.com/Feyisara2108
 
 ## Summary
-Frontend engineer building production web apps in React, Next.js, and TypeScript, with smart-contract experience on Stellar (Soroban/Rust), Ethereum (Solidity/Foundry), and Stacks (Clarity). Frontend Developer at TSWorld Tech, founder and maintainer of StellarGive (official Drips maintainer, 30 contributors, 340+ contract tests), builder of the Web3Ladies platform, and author of 100+ merged pull requests across 40+ open-source repositories.
+Frontend engineer with 2+ years of experience building production web apps in React, Next.js, and TypeScript, with smart-contract experience on Stellar (Soroban/Rust), Ethereum (Solidity/Foundry), and Stacks (Clarity). Currently a Frontend Developer at TSWorld Tech. Built the Web3Ladies platform, maintain StellarGive (30 contributors, 340+ contract tests), and have had 100+ pull requests merged across 40+ open-source repositories.
 
 ## Skills
 - **Languages:** TypeScript, JavaScript, Rust, Solidity, Clarity, SQL, HTML, CSS
@@ -22,7 +22,7 @@ Frontend engineer building production web apps in React, Next.js, and TypeScript
 
 ### Founder & Maintainer, StellarGive (open source)
 *May 2026 – Present | Remote*
-- Founded and maintain a Soroban crowdfunding protocol and its Next.js app; recognized as an official Drips open-source maintainer.
+- Maintain a Soroban crowdfunding protocol and its Next.js app; recognized as an official Drips open-source maintainer.
 - Review and merge work from about 30 contributors; the contract is covered by 340+ Rust tests.
 - Built the CI/CD: 28 GitHub Actions workflows covering tests, CodeQL, secret scanning, Lighthouse, Playwright E2E, and contract deploy/rollback.
 
@@ -30,6 +30,11 @@ Frontend engineer building production web apps in React, Next.js, and TypeScript
 *Apr 2025 – Present | Remote*
 - Rebuilt and launched the organization's website and admin portal in Next.js 16, TypeScript, and Supabase (Postgres, Auth, Row Level Security, Storage), replacing a no-code site.
 - Coordinate onboarding and communications for 28 mentees and 4 mentors, and write the program's documentation, forms, and participant materials.
+
+### Smart Contract Developer, Cohort 14, Web3Bridge Africa
+*Jan 2026 – May 2026*
+- Built and tested Solidity contracts with Foundry and Hardhat: an EIP-2535 Diamond with ERC-20, ERC-721, and lending facets, a multi-signature wallet, and token and airdrop contracts.
+- Led a five-developer team through the ScholarChain capstone: planned the work, reviewed and merged pull requests, and coordinated the frontend-to-contract integration.
 
 ### Open-Source Contributor, Stellar & Ethereum ecosystem
 *2025 – Present | Remote*
@@ -58,9 +63,6 @@ Bounty marketplace where the STX reward is locked in a Clarity contract until th
 Data product that compares tokenized pre-IPO stocks (SpaceX, OpenAI…) against fair value across two issuers, verifies every token on Solana, and links out to trade. React + TypeScript with serverless API routes.
 
 ## Education
-### Web3Bridge Africa, Solidity Smart Contract Development, Cohort 14
-*Jan 2026 – May 2026*
-
 ### AltSchool Africa, Diploma in Frontend Engineering
 *Nov 2024 – Oct 2025*
 

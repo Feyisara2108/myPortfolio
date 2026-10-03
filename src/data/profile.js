@@ -8,21 +8,17 @@ export const profileData = {
   role: "Frontend Engineer & Web3 Developer",
   location: "Lagos, Nigeria",
   // One factual line: what I build + the stack. No clichés, no "passionate".
-  tagline: "I build production web apps with React, Next.js, and TypeScript, and the smart contracts behind them on Stellar, Ethereum, and Stacks.",
+  // "2+ years" in the tagline counts from the first engineering programme (Jul 2024).
+  tagline: [
+    "Frontend engineer with 2+ years of experience shipping production web apps in React, Next.js, and TypeScript, and the smart contracts behind them on Stellar and Ethereum.",
+    "I work across the whole product, from interface to contract, and I ship with tests and CI.",
+  ],
   resumeUrl: "",
   // Shown in the hero so recruiters see fit immediately.
   seeking: "Open to frontend and Web3 engineering roles.",
   // About copy: an engineer introducing themselves. Concise, factual, early-career-honest.
   bio: [
-    "I'm a frontend engineer in Lagos. I work in React, Next.js, and TypeScript, currently as a Frontend Developer at TSWorld Tech, building the interfaces for Flux, an offline-resilience platform.",
-    "I also write smart contracts, mostly Soroban (Rust) on Stellar, plus Solidity and Clarity. I founded and maintain StellarGive, rebuilt the Web3Ladies platform, and have had 100+ pull requests merged in other people's open-source projects. I trained at AltSchool Africa (Frontend Engineering diploma) and Web3Bridge Africa.",
-  ],
-  // Short proof points shown under the hero. Keep each one verifiable.
-  stats: [
-    { value: "100+", label: "PRs merged in other projects" },
-    { value: "30", label: "contributors on StellarGive" },
-    { value: "340+", label: "contract tests on StellarGive" },
-    { value: "28", label: "CI workflows on StellarGive" },
+    "I'm currently a Frontend Developer at TSWorld Tech, building the interface for Flux, a platform that keeps web apps working offline. I trained in frontend engineering at AltSchool Africa and in smart-contract development at Web3Bridge Africa, and I've been contributing to open-source Stellar and Ethereum projects since 2025, with 100+ pull requests merged.",
   ],
   // "Beyond the code" in the About section: the parts of me a job title doesn't show.
   beyondCode: [

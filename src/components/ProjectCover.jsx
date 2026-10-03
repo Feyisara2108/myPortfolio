@@ -33,7 +33,7 @@ function glyphFor(tags = []) {
 
 // If the project has a screenshot, show it; otherwise render a branded cover
 // (faint tech glyph + title + primary tags) so every card communicates.
-export default function ProjectCover({ project, className = '' }) {
+export default function ProjectCover({ project, className = '', eager = false }) {
   if (project.image) {
     return (
       <img
@@ -41,7 +41,7 @@ export default function ProjectCover({ project, className = '' }) {
         alt={`${project.title} user interface`}
         width="1280"
         height="800"
-        loading="lazy"
+        loading={eager ? "eager" : "lazy"}
         decoding="async"
         className={`w-full h-full object-cover ${className}`}
       />

@@ -5,7 +5,7 @@ import Section from './Section';
 export default function About() {
   return (
     <Section id="about" title="About">
-      <div className="grid md:grid-cols-[1fr_15rem] gap-10 md:gap-14">
+      <div className="grid md:grid-cols-[1fr_11rem] gap-8 md:gap-14 md:items-start">
         <div className="space-y-5 text-lg text-textMuted leading-relaxed max-w-2xl">
           {profileData.bio.map((p) => (
             <p key={p}>{p}</p>
@@ -17,8 +17,7 @@ export default function About() {
           alt={`Portrait of ${profileData.name}`}
           width="480"
           height="600"
-          loading="lazy"
-          className="w-40 md:w-full aspect-[4/5] object-cover rounded-lg border border-line order-first md:order-none"
+          className="w-32 md:w-full aspect-square object-cover rounded-lg border border-line order-first md:order-none"
         />
       </div>
 

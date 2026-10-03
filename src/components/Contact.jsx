@@ -15,7 +15,7 @@ export default function Contact() {
     <Section
       id="contact"
       title="Contact"
-      intro="I'm looking for frontend and Web3 engineering roles. The fastest way to reach me is email; I usually reply within a day."
+      intro="I'm looking for frontend and Web3 engineering roles. Email is the best way to reach me."
     >
       <a
         href={`mailto:${socials.email}`}

@@ -52,16 +52,18 @@ export const projectsData = [
     slug: "stellargive",
     title: "StellarGive",
     tagline: "Transparent on-chain crowdfunding on Stellar Soroban.",
-    description: "Open-source crowdfunding protocol on Stellar that I founded and maintain (official Drips maintainer): Soroban contract with 340+ Rust tests, a Next.js donor app, Playwright E2E, and 28 GitHub Actions workflows. 30 contributors.",
+    description: "Open-source crowdfunding protocol on Stellar (official Drips maintainer): Soroban contract with 340+ Rust tests, a Next.js donor app, Playwright E2E, and 28 GitHub Actions workflows. 30 contributors.",
     role: "Founder & maintainer",
-    status: "Live · Stellar testnet",
+    status: "Stellar testnet",
     featured: true,
     github: "https://github.com/Feyisara2108/stellargive",
-    liveLink: "https://stellargive.vercel.app",
+    // Live site currently can't load campaigns from the Stellar RPC; restore
+    // "https://stellargive.vercel.app" once it does.
+    liveLink: null,
     image: "/images/stellargive.jpg",
     tags: ["Soroban", "Rust", "Next.js", "TypeScript"],
     highlights: [
-      "Founder and maintainer; official Drips open-source maintainer with about 30 contributors.",
+      "About 30 contributors; recognized as an official Drips open-source maintainer.",
       "Soroban contract for campaigns, donations, claims, and refunds, covered by 340+ Rust tests.",
       "28 GitHub Actions workflows, including CodeQL, Playwright E2E, and contract deploy/rollback.",
     ],
@@ -70,7 +72,7 @@ export const projectsData = [
     problem:
       "Traditional crowdfunding relies on an intermediary that holds the funds and reports where they went. Donors can't verify that their money reached the campaign, and platforms can freeze or skim balances. StellarGive settles everything on-chain, and refunds are enforced by the contract.",
     contribution: [
-      "Founded the project and maintain it: roadmap, issues, reviews, and merges for about 30 contributors. Recognized as an official Drips open-source maintainer.",
+      "Run the project day to day: roadmap, issues, reviews, and merges for about 30 contributors. Recognized as an official Drips open-source maintainer.",
       "Built and hardened the Soroban contract for campaign creation, donations, claims, and refunds, backed by 340+ Rust unit tests.",
       "Set up the CI/CD: 28 GitHub Actions workflows covering contract tests, lint, CodeQL, gitleaks, Lighthouse, visual regression, nightly E2E, and contract deploy and rollback.",
       "Fixed CI blockers and the frontend deploy pipeline, and configured Dependabot to keep major upgrades in separate PRs.",
@@ -218,7 +220,6 @@ export const projectsData = [
     image: "/images/safesale.jpg",
     tags: ["React", "TypeScript", "Nostr", "Cashu"],
     highlights: [
-      "First Runner-Up at the Hack4Freedom hackathon.",
       "Built the frontend across 14 merged PRs: onboarding, seller dashboard, listings, and checkout.",
       "Buyer funds stay in ecash only the buyer's key can release; the platform never holds them.",
     ],

@@ -3,9 +3,10 @@ import { FiMoon, FiSun } from 'react-icons/fi';
 import { useTheme } from '../hooks/useTheme';
 
 const SECTIONS = [
+  { id: 'about', label: 'About' },
   { id: 'work', label: 'Work' },
-  { id: 'open-source', label: 'Open Source' },
   { id: 'experience', label: 'Experience' },
+  { id: 'open-source', label: 'Open Source' },
   { id: 'contact', label: 'Contact' },
 ];
 

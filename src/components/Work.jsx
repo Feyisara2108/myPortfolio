@@ -35,9 +35,22 @@ export default function Work() {
           <article key={project.slug} className="grid md:grid-cols-2 gap-6 md:gap-10 items-center">
             <Link
               to={`/projects/${project.slug}`}
-              className={`block aspect-[16/10] rounded-lg overflow-hidden border border-line bg-card ${i % 2 ? 'md:order-2' : ''}`}
+              className={`group/frame block rounded-lg overflow-hidden border border-line bg-card shadow-sm hover:shadow-md transition-shadow ${i % 2 ? 'md:order-2' : ''}`}
             >
-              <ProjectCover project={project} className="hover:scale-[1.02] transition-transform duration-500" />
+              {/* Browser-window chrome so screenshots read as shipped products */}
+              <div className="flex items-center gap-1.5 px-3 h-7 border-b border-line bg-bg" aria-hidden="true">
+                <span className="h-2 w-2 rounded-full bg-line" />
+                <span className="h-2 w-2 rounded-full bg-line" />
+                <span className="h-2 w-2 rounded-full bg-line" />
+                {project.liveLink && (
+                  <span className="ml-3 truncate font-mono text-[10px] text-textMuted">
+                    {project.liveLink.replace(/^https?:\/\//, '')}
+                  </span>
+                )}
+              </div>
+              <div className="aspect-[16/10] overflow-hidden">
+                <ProjectCover project={project} className="group-hover/frame:scale-[1.02] transition-transform duration-500" />
+              </div>
             </Link>
             <div>
               <p className="font-mono text-xs uppercase tracking-wider text-accent">{project.status}</p>

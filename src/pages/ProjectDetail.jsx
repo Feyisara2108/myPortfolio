@@ -1,7 +1,7 @@
 import { Link, useLocation, useNavigate, useParams } from 'react-router-dom';
 import { FaGithub } from 'react-icons/fa';
-import { FiArrowLeft, FiArrowUpRight } from 'react-icons/fi';
-import { getProjectBySlug } from '../data/projects';
+import { FiArrowLeft, FiArrowRight, FiArrowUpRight } from 'react-icons/fi';
+import { getProjectBySlug, projectsData } from '../data/projects';
 import ProjectCover from '../components/ProjectCover';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -30,6 +30,9 @@ export default function ProjectDetail() {
   if (!project) {
     return <NotFound message="Project not found" backTo="/projects" backLabel="Back to all projects" />;
   }
+
+  // Wraps around so the last case study leads back to the first.
+  const next = projectsData[(projectsData.indexOf(project) + 1) % projectsData.length];
 
   // Only the sections a project has data for are rendered.
   const sections = [
@@ -94,7 +97,7 @@ export default function ProjectDetail() {
           </header>
 
           <div className="mt-10 rounded-lg overflow-hidden border border-line aspect-[16/10] bg-card">
-            <ProjectCover project={project} />
+            <ProjectCover project={project} eager />
           </div>
 
           <div className="mt-10 space-y-5 text-lg text-textMuted leading-relaxed">
@@ -108,6 +111,18 @@ export default function ProjectDetail() {
               <BulletList items={s.items} />
             </section>
           ))}
+
+          <Link
+            to={`/projects/${next.slug}`}
+            className="group mt-16 flex items-center justify-between gap-6 rounded-lg border border-line p-5 md:p-6 hover:border-accent transition-colors"
+          >
+            <span>
+              <span className="block font-mono text-xs uppercase tracking-wider text-textMuted">Next project</span>
+              <span className="mt-1 block text-lg font-semibold group-hover:text-accent transition-colors">{next.title}</span>
+              <span className="mt-1 block text-sm text-textMuted">{next.tagline}</span>
+            </span>
+            <FiArrowRight className="shrink-0 text-textMuted group-hover:text-accent group-hover:translate-x-0.5 transition-all" size={20} />
+          </Link>
         </article>
       </main>
 

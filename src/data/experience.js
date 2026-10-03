@@ -18,7 +18,7 @@ export const experienceData = [
     location: "Remote",
     dates: "May 2026 – Present",
     highlights: [
-      "Founded and maintain a Soroban crowdfunding protocol and its Next.js app; recognized as an official Drips open-source maintainer.",
+      "Maintain a Soroban crowdfunding protocol and its Next.js app; recognized as an official Drips open-source maintainer.",
       "Review and merge work from about 30 contributors; the contract is covered by 340+ Rust tests.",
       "Built the CI/CD: 28 GitHub Actions workflows covering tests, CodeQL, secret scanning, Lighthouse, Playwright E2E, and contract deploy/rollback.",
     ],
@@ -31,6 +31,15 @@ export const experienceData = [
     highlights: [
       "Rebuilt and launched the organization's website and admin portal in Next.js 16, TypeScript, and Supabase (Postgres, Auth, Row Level Security, Storage), replacing a no-code site.",
       "Coordinate onboarding and communications for 28 mentees and 4 mentors, and write the program's documentation, forms, and participant materials.",
+    ],
+  },
+  {
+    role: "Smart Contract Developer, Cohort 14",
+    company: "Web3Bridge Africa",
+    dates: "Jan 2026 – May 2026",
+    highlights: [
+      "Built and tested Solidity contracts with Foundry and Hardhat: an EIP-2535 Diamond with ERC-20, ERC-721, and lending facets, a multi-signature wallet, and token and airdrop contracts.",
+      "Led a five-developer team through the ScholarChain capstone: planned the work, reviewed and merged pull requests, and coordinated the frontend-to-contract integration.",
     ],
   },
   {
