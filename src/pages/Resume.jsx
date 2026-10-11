@@ -30,7 +30,7 @@ export default function Resume() {
       {/* Toolbar — hidden when printing */}
       <div className="print:hidden sticky top-0 z-40 backdrop-blur-md bg-bg/85 border-b border-line">
         <div className="max-w-3xl mx-auto px-6 py-4 flex items-center justify-between">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-textMuted hover:text-accent transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-sm font-medium text-textMuted hover:text-accent transition-colors py-1.5">
             <FiArrowLeft size={16} /> Back to portfolio
           </Link>
           <a
@@ -53,7 +53,7 @@ export default function Resume() {
             <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3 text-sm text-textMuted print:text-gray-600">
               <span>{profileData.location}</span>
               {contactLinks.map((l) => (
-                <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="hover:text-accent">
+                <a key={l.href} href={l.href} target="_blank" rel="noreferrer" className="py-1 hover:text-accent">
                   {l.label}
                 </a>
               ))}

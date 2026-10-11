@@ -13,7 +13,7 @@ export default function About() {
         </div>
 
         <img
-          src="/images/QKRU2729.JPG"
+          src="/images/headshot.jpg"
           alt={`Portrait of ${profileData.name}`}
           width="480"
           height="600"
@@ -32,7 +32,7 @@ export default function About() {
                 href={item.link.href}
                 target="_blank"
                 rel="noreferrer"
-                className="mt-2 inline-flex items-center gap-1 text-sm font-medium text-accent hover:underline underline-offset-4"
+                className="mt-1 inline-flex items-center gap-1 py-1.5 text-sm font-medium text-accent hover:underline underline-offset-4"
               >
                 {item.link.label} <FiArrowUpRight size={13} />
               </a>

@@ -34,7 +34,7 @@ export default function OpenSource() {
         href={openSourceStats.prSearchUrl}
         target="_blank"
         rel="noreferrer"
-        className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:underline underline-offset-4"
+        className="mt-6 inline-flex items-center gap-1.5 py-1.5 text-sm font-medium text-accent hover:underline underline-offset-4"
       >
         All merged pull requests on GitHub <FiArrowUpRight size={14} />
       </a>

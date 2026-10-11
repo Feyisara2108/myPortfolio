@@ -10,16 +10,16 @@ const otherProjects = projectsData.filter((p) => !p.featured);
 function ProjectLinks({ project }) {
   return (
     <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm font-medium">
-      <Link to={`/projects/${project.slug}`} className="group inline-flex items-center gap-1.5 text-accent hover:underline underline-offset-4">
+      <Link to={`/projects/${project.slug}`} className="group inline-flex items-center gap-1.5 py-1.5 text-accent hover:underline underline-offset-4">
         Case study <FiArrowRight className="transition-transform group-hover:translate-x-0.5" size={14} />
       </Link>
       {project.liveLink && (
-        <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-textMuted hover:text-textPrimary">
+        <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-textMuted hover:text-textPrimary py-1.5">
           Live <FiArrowUpRight size={14} />
         </a>
       )}
       {project.github && (
-        <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-textMuted hover:text-textPrimary">
+        <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-textMuted hover:text-textPrimary py-1.5">
           <FaGithub size={14} /> Code
         </a>
       )}

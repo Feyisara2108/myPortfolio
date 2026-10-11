@@ -13,7 +13,7 @@ export default function AllProjects() {
 
       <main className="flex-1 px-5 md:px-8 pt-12 pb-20">
         <div className="max-w-5xl mx-auto fade-up">
-          <Link to="/" className="inline-flex items-center gap-2 text-sm text-textMuted hover:text-accent transition-colors">
+          <Link to="/" className="inline-flex items-center gap-2 text-sm text-textMuted hover:text-accent transition-colors py-1.5">
             <FiArrowLeft size={14} /> Home
           </Link>
           <h1 className="mt-8 text-3xl md:text-4xl font-semibold tracking-tight">Projects</h1>
@@ -30,22 +30,22 @@ export default function AllProjects() {
                 <div className="flex flex-col flex-1 p-5">
                   <p className="font-mono text-[11px] uppercase tracking-wider text-accent">{project.status}</p>
                   <h2 className="mt-2 text-lg font-semibold">
-                    <Link to={`/projects/${project.slug}`} className="hover:text-accent transition-colors">
+                    <Link to={`/projects/${project.slug}`} className="inline-block py-1 hover:text-accent transition-colors">
                       {project.title}
                     </Link>
                   </h2>
                   <p className="mt-2 text-sm text-textMuted leading-relaxed flex-1">{project.tagline}</p>
                   <div className="mt-4 flex gap-4 text-sm font-medium">
-                    <Link to={`/projects/${project.slug}`} className="text-accent hover:underline underline-offset-4">
+                    <Link to={`/projects/${project.slug}`} className="py-1.5 text-accent hover:underline underline-offset-4">
                       Case study
                     </Link>
                     {project.liveLink && (
-                      <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-textMuted hover:text-textPrimary">
+                      <a href={project.liveLink} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 text-textMuted hover:text-textPrimary py-1.5">
                         Live <FiArrowUpRight size={13} />
                       </a>
                     )}
                     {project.github && (
-                      <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-textMuted hover:text-textPrimary">
+                      <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1.5 text-textMuted hover:text-textPrimary py-1.5">
                         <FaGithub size={13} /> Code
                       </a>
                     )}

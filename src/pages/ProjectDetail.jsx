@@ -51,12 +51,12 @@ export default function ProjectDetail() {
             <button
               type="button"
               onClick={() => navigate(-1)}
-              className="inline-flex items-center gap-2 text-sm text-textMuted hover:text-accent transition-colors"
+              className="inline-flex items-center gap-2 text-sm text-textMuted hover:text-accent transition-colors py-1.5"
             >
               <FiArrowLeft size={14} /> Back
             </button>
           ) : (
-            <Link to="/projects" className="inline-flex items-center gap-2 text-sm text-textMuted hover:text-accent transition-colors">
+            <Link to="/projects" className="inline-flex items-center gap-2 text-sm text-textMuted hover:text-accent transition-colors py-1.5">
               <FiArrowLeft size={14} /> All projects
             </Link>
           )}
